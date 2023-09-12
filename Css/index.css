@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400&family=Montserrat&family=Poppins:wght@300&family=Tilt+Prism&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+
+/* Se desea que todo lo que contenga la etiqueta main tenga un color de fondo negro y el color de letra blanco */
+main {
+    background-color: black;
+    color:white
+}
+
+/* Se inicializa 2 columnas por 3 filas que se dividiran en el header countent y foooter, sus proporciones en columna
+se dan con grid-column y las proporciones en fila con grid-row */
+#areas {
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-row: 10vh 60vh 30vh;
+    grid-template-areas: 
+    "header    header"
+    "content   content-2"
+    "footer    footer";
+}
+
+/*------------------------------------------------- ETIQUETA HEADER ----------------------------------------------------------------------------*/
+
+/* Todo lo que contenca la etiqueta header tendra un color de letra blanco, se desea que cada contenedor se extienda de borde 
+a borde de la pagina, donde tendra un espacio dentro del contenedor de 25px con la propiedad padding. A la etique header se 
+le tendra que pasar las proporciones que tendra en la pagina por eso se le asigna a la propiedad grid-area: que ocupara todo el
+header */
+#header {
+    color: white;
+    display:flex;
+    justify-content: space-between;
+    padding: 25px;
+    grid-area: header;
+    border-bottom: 3px solid white;
+    font-size: 23pt;
+}
+
+/* logo corresponde a el contenedor en el que estan las dos S que representan el logo de la marcar, en este caso se le dara un
+peso "negrilla" de 1000*/
+#contenedor-logo {
+    font-weight: 1000;
+}
+
+/* Se desea cambiar el color de la segunda S del logo y darle un espacion de 3px entre ellas con un margin-left */
+#s-amarilla {
+    color: #FFD966;
+    margin-left: 3px;
+}
+
+/* Este contenedor hace referencia al nombre del proyecto, donde se le daran las propiedades de display: flex para que 
+dicho contenedor se pues aliniar al centro de la pagina y alinear al centro del contenedor, se podra hacer ya que el
+contenedor esta ocupando el 100% de la pantalla a lo ancho asi que todo se pondra al centro de esta, y con la propiedad
+font-weight toma un peso de 1000 */
+#selection-system {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 1000;
+}
+
+/* Al nombre system se dara otro color diferente al blanco dado por defecto en la etique main */
+#system {
+    color:#FFD966;
+}
+
+/*------------------------------------------- ETIQUETA SECTION "CONTENEDOR-WELCOME" INFORMACION ------------------------------------------------*/
+
+/* Este contenedor hace referencia a todo el contenedor de informacion */
+#contenedor-welcome {
+    display: flex;
+    align-items: center;
+}
+
+/* Este contenedor contiene toda la informacion por eso se le asigna la columna de grid-area content y dicho contenedor tendra una 
+anchura del 95% del contenedor padre*/
+#area-content {
+    grid-area: content;
+    width: 95%;
+}
+
+/* Este contenedor contendra toda la informacion que hay en la pagina, todo el contenido que este dentro del contenedor esta en 
+forma de columna y toda la informacion estara en el centro del contenedor y ocupara el 75% del contenedor */
+#contenedor-informacion {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    width: 73%;
+    margin-left: 150px;
+}
+
+/* El titulo del contenedor como contiene dos etiquetas h1 se realiza el display:flex para que las etiquetas esten en la misma linea
+y tendran un tamaño de 28 puntos*/
+#titulo-content {
+    display: flex;
+    font-size: 28pt;
+}
+
+/* El segundo h1 del contendor titulo-content se le asigna un otro tipo de color y se le pasa un margin-left para que haya un espacion
+del primer h1 al segundo h1*/
+#titulo-system {
+    margin-left: 10px;
+    color:#FFD966;
+}
+
+/* La barra que estara debajo del titulo tendra una anchura del 45% del contenedor con una altura de 3px y se le asigna un color con 
+un box-shadow 10px */
+#barra_1 {
+    width: 45%;
+    height: 3px;
+    background-color: #FFD966;
+    box-shadow: 0 0 10px #FFD966;
+}
+
+/* El parrafo que contiene la informacion tendra un tamaño de 14 puntos */
+#contenedor-informacion p {
+    font-size: 14pt;
+}
+
+/* El contenedor boton-informacion tiene un display: flex para que los dos botones que contiene esten en la misma posicion
+y esten ceparados en 40px*/
+#boton-informacion {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* Todas las etiquetas a del contenedor boton-informacion contendra dichas propiedades donde cabe recalcar font-weight: 650
+el cual nos pondra en negrilla el nombre que tenga la etiqueta <a> y como dicha etiqueta es un lick se le quita la linea que
+contiene debajo con un text-decoration: none*/
+#boton-informacion a {
+    background-color: #FFD966;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 10px #FFD966;
+    font-size: 12pt;
+    font-weight: 650;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Cada que se pase el raton por encima de los botones tendran las siguientes propiedades*/
+#boton-informacion a:hover{
+    color: #FFD966;
+    background-color: black;
+    transition: 0.4s;
+    box-shadow: 0 0 15px #FFD966;
+}
+
+/*------------------------------------------- ETIQUETA SECTION "CONTENEDOR-WELCOME" IMAGEN ------------------------------------------------*/
+
+#content-2 {
+    grid-area: content-2;
+    display:flex;
+    justify-content: left;
+    width: 70%;
+    height: 80%;
+}
+
+#contenedor-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imagen-logo {
+    border: 4px solid #FFD966;
+    border:none;
+    border-radius: 100px;
+    height: 90%;
+}
+
+#imagen-logo:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 60px #FFD966;
+
+}
+
+/*-------------------------------------------------------- ETIQUETA FOOTER -------------------------------------------------------------------*/
+
+footer {
+    grid-area: footer;
+    background-color: #FFD966;
+    box-shadow: 0 0 10px #FFD966;
+}
+
+footer:hover {
+    box-shadow: 0 0 40px #FFD966;
+    transition: 0.4s;
+}
+
+#union {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#contenedor-img {
+    width: 7%;
+    margin-left: 10px;
+}
+
+#logo-png {
+    display: flex;
+    width: 160px;
+    height: 117px;
+}
+
+#info-footer {
+    display: flex;
+    color: black;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+#sebas,#william,#peter,#capera {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#apps {
+    display: flex;
+    gap: 25px;
+}
+
+#apps i{
+    color:black
+}
+
+#apps i:hover{
+    color:black;
+    font-size: 23px;
+    transition: 0.3s;
+}

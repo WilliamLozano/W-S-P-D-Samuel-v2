@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400&family=Montserrat&family=Poppins:wght@300&family=Tilt+Prism&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+
+body {
+    background-color: black;
+    color:white
+}
+
+body::-webkit-scrollbar{
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 0 10px white;
+}
+
+#areas {
+    display: grid;
+    grid-template-columns: 455px 1fr;
+    grid-row: 10vh 10vh auto 30vh;
+    grid-template-areas:
+    "header    header"
+    "navbar    navbar"
+    "content   content-2"
+    "footer    footer";
+}
+
+/* -------------------------------------------------------- ETIQUETA HEADER ------------------------------------------------------------------ */
+
+#header {
+    color: white;
+    display:flex;
+    justify-content: space-between;
+    padding: 25px;
+    grid-area: header;
+    border-bottom: 3px solid white;
+    font-size: 23pt;
+    position: static;
+    width: 100%;
+    position: fixed;
+    background-color: black;
+}
+
+#contenedor-logo {
+    font-weight: 1000;
+}
+
+#s-amarilla {
+    color: #FFD966;
+    margin-left: 3px;
+}
+
+#selection-system {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 1000;
+}
+
+#system {
+    color:#FFD966;
+}
+
+/* --------------------------------------------------------- ETIQUETA NAV --------------------------------------------------------------------- */
+
+#navbar {
+    grid-area: navbar;
+    width: 100%;
+    height: 95px;
+    display: flex;
+    justify-content: center;
+}
+
+#titulo-sintesis #titulo {
+    margin-top: 30px;
+    font-weight: 1000;
+    font-size: 24pt;
+    margin-left: 60px;
+}
+
+#titulo-sintesis #barra {
+    width: 60%;
+    height: 3px;
+    margin-left: 105px;
+    background-color: #FFD966; 
+}
+
+
+/* ---------------------------------------------------- ETIQUETA SECTION - CONTENT ------------------------------------------------------------ */
+
+#content {
+    grid-area: content;
+    width: 72%;
+    height: 200px;
+    background-color: white;
+    color: black;
+    margin-top: 45px;
+    margin-left: 95px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px white;
+}
+
+#content:hover{
+    box-shadow: 0 0 25px white;
+    transition: 0.4s;
+}
+
+#cuadro-sintesis {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    padding-left: 20px;
+}
+
+#cuadro-sintesis #titulo {
+    font-size: 15pt;
+}
+
+#cuadro-sintesis #cod-vacante, #postulados {
+    font-weight: 1000;
+}
+
+#boton-postularme {
+    display: flex;
+    width: 32%;
+    margin: auto;
+    background-color: #FFD966;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    border: black;
+    box-shadow: 0 0 3px black;
+    font-size: 12pt;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#boton-postularme:hover {
+    background-color: black;
+    color: #FFD966;
+    transition: 0.4s;
+}
+
+/* ------------------------------------------------ ETIQUETA SECTION - CONTENT-2 FUNCIONES ----------------------------------------------------- */
+
+#contenedor-content {
+    grid-area: content-2;
+    color:black;
+    margin-top: 45px;
+}
+
+#contenedor-funciones{
+    width: 84%;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px white;
+    margin: auto;
+    margin-bottom: 70px;
+}
+
+#contenedor-funciones:hover{
+    box-shadow: 0 0 25px white;
+    transition: 0.4s;
+}
+
+#contenedor-funciones #titulo-funciones {
+    display: flex;
+    justify-content: center;
+    font-size: 18pt;
+    margin-bottom: 20px;
+}
+
+#contenedor-funciones #barra {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    box-shadow: 0 0 2px black;
+}
+
+#contenedor-funciones p {
+    display: flex;
+    margin-top: 15px;
+    width: 95%;
+    text-align: center;
+    margin-bottom: 15px ;
+}
+
+/* ------------------------------------------------ ETIQUETA SECTION - CONTENT-2 SINTESIS ----------------------------------------------------- */
+
+#sintesis-oferta {
+    grid-area: content-2;
+    color:black;
+    width: 79%;
+    border-radius: 15px;
+    padding: 50px;
+    background-color: white;
+    box-shadow: 0 0 10px white;
+    margin: auto;
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#sintesis-oferta:hover {
+    box-shadow: 0 0 25px white;
+    transition: 0.4s;
+}
+
+#boton-volver {
+    display: flex;
+    justify-content: center;
+}
+
+#volver {
+    background-color: #FFD966;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 3px #FFD966;
+    font-size: 12pt;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#volver:hover {
+    background-color: black;
+    color: #FFD966;
+    transition: 0.4s;
+    box-shadow: 0 0 3px black;
+}
+
+#botones {
+    display: flex;
+}
+
+/* -------------------------------------------------------- ETIQUETA FOOTER ------------------------------------------------------------------ */
+
+footer {
+    grid-area: footer;
+    background-color: #FFD966;
+    box-shadow: 0 0 10px #FFD966;
+}
+
+footer:hover {
+    box-shadow: 0 0 40px #FFD966;
+    transition: 0.4s;
+}
+
+#union {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#contenedor-img {
+    width: 7%;
+    margin-left: 10px;
+}
+
+#logo-png {
+    display: flex;
+    width: 160px;
+    height: 117px;
+}
+
+#info-footer {
+    display: flex;
+    color: black;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+#sebas,#william,#peter,#capera {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#apps {
+    display: flex;
+    gap: 25px;
+}
+
+#apps i{
+    color:black
+}
+
+#apps i:hover{
+    color:black;
+    font-size: 23px;
+    transition: 0.3s;
+}
