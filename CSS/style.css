@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400&family=Montserrat&family=Poppins:wght@300&family=Tilt+Prism&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+
+/* Se desea que todo lo que contenga la etiqueta main tenga un color de fondo negro y el color de letra blanco */
+main {
+    background-color: black;
+    color: white
+}
+
+/* Se inicializa 2 columnas por 3 filas que se dividirán en el header, contenido y footer. Sus proporciones en columna se dan con grid-column y las proporciones en fila con grid-row */
+#areas {
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-row: 10vh 60vh 30vh;
+    grid-template-areas:
+        "header    header"
+        "contenedor-titulo contenedor-titulo"
+        "botones-1 botones-1"
+        "contenedor-formularios contenedor-formularios";
+}
+
+/*------------------------------------------------- ETIQUETA HEADER ----------------------------------------------------------------------------*/
+
+/* Todo lo que contenga la etiqueta header tendrá un color de letra blanco, se desea que cada contenedor se extienda de borde a borde de la página, donde tendrá un espacio dentro del contenedor de 25px con la propiedad padding. A la etiqueta header se le tendrán que pasar las proporciones que tendrá en la página, por eso se le asigna la propiedad grid-area, que ocupará todo el header */
+#header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    grid-area: header;
+    border-bottom: 3px solid white;
+    font-size: 23pt;
+}
+
+/* Logo corresponde al contenedor en el que están las dos "S" que representan el logo de la marca, en este caso se le dará un peso "negrilla" de 1000 */
+#contenedor-logo {
+    font-weight: 1000;
+}
+
+/* Se desea cambiar el color de la segunda "S" del logo y darle un espacio de 3px entre ellas con un margin-left */
+#s-amarilla {
+    color: #FFD966;
+    margin-left: 3px;
+}
+
+/* Este contenedor hace referencia al nombre del proyecto, donde se le darán las propiedades de display: flex para que dicho contenedor se pueda alinear al centro de la página y alinear al centro del contenedor. Se podrá hacer ya que el contenedor está ocupando el 100% de la pantalla a lo ancho, así que todo se pondrá al centro de esta, y con la propiedad font-weight toma un peso de 1000 */
+#selection-system {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 1000;
+}
+
+/* Al nombre "system" se le dará otro color diferente al blanco dado por defecto en la etiqueta main */
+#system {
+    color: #FFD966;
+}
+
+/*------------------------------------------------- ETIQUETA SECTION "DEBAJO DEL HEADER" ----------------------------------------------------------------------------*/
+
+.titulo1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    font-size: x-large;
+}
+
+.titulo2 {
+    justify-content: center;
+    padding-left: 150px;
+}
+
+#botones-1 {
+    display: flex;
+    grid-column: 1fr 1fr;
+    text-align: start;
+    padding-inline-start: 50px;
+    justify-content: center;
+    padding-left: 15px;
+    gap: 25px;
+    grid-area: botones-1;
+    height: 25px;
+}
+
+        /* Estilos para los botones */
+        button {
+            background-color: #ffd966d5; /* Color de fondo */
+            color: #100f0f; /* Color del texto */
+            border: none; /* Sin borde */
+            padding: 10px 20px; /* Espaciado interno */
+            font-weight: bold; /* Negrita */
+            border-radius: 5px; /* Borde redondeado */
+            cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+        }
+
+        /* Estilos al pasar el mouse sobre los botones */
+        button:hover {
+            background-color: #0056b3; /* Cambiar color de fondo al pasar el mouse */
+        }
+
+        /* Estilos para las letras */
+        .img1 h5,
+        .img2 h5,
+        .img3 h5,
+        .img4 h5,
+        .img5 h5,
+        .img6 h5,
+        .img7 h5,
+        .img8 h5,
+        .img9 h5,
+        .img10 h5,
+        .img11 h5,
+        .img12 h5 {
+            font-family: Arial, sans-serif; /* Fuente del texto */
+            font-size: 16px; /* Tamaño de la fuente */
+            color: #ffffff; /* Color del texto */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+            letter-spacing: 1px; /* Espaciado entre letras */
+            margin-top: 10px; /* Espacio superior */
+        }
