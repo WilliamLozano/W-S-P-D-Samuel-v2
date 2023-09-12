@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400&family=Montserrat&family=Poppins:wght@300&family=Tilt+Prism&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+main{
+    background-color: black;
+    color: aliceblue;
+}
+#areas{
+    display: grid;
+    grid-column: 1fr 1fr ;
+    grid-row: 10vh 20vh 40vh 30vh;
+
+    grid-template-areas: "header header""reclutador_contenido""controles_reclutador controles_reclutador";
+    
+}
+#header{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    border-bottom: 3px solid white;
+    font-size:30pt;
+
+}
+#menu{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-bottom: 0%;
+    background: #ffd966;
+    color:black
+}
+#amarillo{
+    color: #ffd966;
+    margin-left: 3px;
+}
+
+
+#reclutador_contenido{
+    display: flex;
+    grid-area:auto;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+#titulo_reclutador{
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#controles_reclutador{
+    display: flex;
+    grid-area:auto;
+    justify-content: center;
+    align-items: center;
+    border-bottom:3px solid  #ffd966  ;
+    border-top: 3px solid  #ffd966 ;
+    
+}
+#control{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    background: rgba(128, 128, 128, 0.653);
+    width: 300px;
+    height: 250px;
+    margin: 30px;
+    border-radius: 25px;
+    border: 3px solid #ffd966;
+}
+#dibujo{
+    background-color: #ffd966;
+    width: 120px;
+    height: 90px;
+    margin-bottom: 10px;
+    border-radius: 20%;
+}
+#boton1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(46, 46, 46);
+    width: 150px;
+    height: 30px;
+    border: 2px solid #ffd966;
+    margin: 10px;
+}
+#boton1:hover{
+    background-color: #ffd966;
+    color: black;
+    transition: 0.8s;
+}
+#boton2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(46, 46, 46);
+    width: 150px;
+    height: 30px;
+    border: 2px solid #a0a0a0
+}
+#boton2:hover{
+    background-color: #a0a0a0;
+    color: black;
+    transition: 0.8s;
+}
+
+/*-----------------foter-----------------*/
+footer {
+    
+    background-color: #FFD966;
+    
+}
+
+#union {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#contenedor-img {
+    width: 7%;
+    margin-left: 10px;
+}
+
+#logo-png {
+    display: flex;
+    width: 160px;
+    height: 117px;
+}
+
+#info-footer {
+    display: flex;
+    color: black;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+#sebas,#william,#peter,#capera {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#apps {
+    display: flex;
+    gap: 25px;
+}
+
+#apps i{
+    color:black
+}
+
+#apps i:hover{
+    color:black;
+    font-size: 23px;
+    transition: 0.3s;
+}
+
+
+
+#informacion{
+    display: flex;
+    color: black;
+    background: #ffd966;
+    
+} 
+
+
+
+
+
+
