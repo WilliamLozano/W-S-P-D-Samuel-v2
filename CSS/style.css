@@ -21,7 +21,7 @@ main {
         "contenedor-titulo contenedor-titulo"
         "botones-1 botones-1"
         "contenedor-formularios contenedor-formularios";
-}
+} 
 
 /*------------------------------------------------- ETIQUETA HEADER ----------------------------------------------------------------------------*/
 
@@ -39,12 +39,14 @@ main {
 /* Logo corresponde al contenedor en el que están las dos "S" que representan el logo de la marca, en este caso se le dará un peso "negrilla" de 1000 */
 #contenedor-logo {
     font-weight: 1000;
+    
 }
 
 /* Se desea cambiar el color de la segunda "S" del logo y darle un espacio de 3px entre ellas con un margin-left */
 #s-amarilla {
     color: #FFD966;
     margin-left: 3px;
+    
 }
 
 /* Este contenedor hace referencia al nombre del proyecto, donde se le darán las propiedades de display: flex para que dicho contenedor se pueda alinear al centro de la página y alinear al centro del contenedor. Se podrá hacer ya que el contenedor está ocupando el 100% de la pantalla a lo ancho, así que todo se pondrá al centro de esta, y con la propiedad font-weight toma un peso de 1000 */
@@ -55,6 +57,7 @@ main {
     align-items: center;
     gap: 10px;
     font-weight: 1000;
+    
 }
 
 /* Al nombre "system" se le dará otro color diferente al blanco dado por defecto en la etiqueta main */
@@ -62,7 +65,7 @@ main {
     color: #FFD966;
 }
 
-/*------------------------------------------------- Decoracion Pagina ----------------------------------------------------------------------------*/
+/*------------------------------------------------- ETIQUETA SECTION "DEBAJO DEL HEADER" ----------------------------------------------------------------------------*/
 
 .titulo1 {
     display: flex;
@@ -101,11 +104,6 @@ main {
             cursor: pointer; /* Cambiar el cursor al pasar el mouse */
         }
 
-        /* Estilos al pasar el mouse sobre los botones */
-        button:hover {
-            background-color: #0056b3; /* Cambiar color de fondo al pasar el mouse */
-        }
-
         /* Estilos para las letras */
         .img1 h5,
         .img2 h5,
@@ -121,17 +119,12 @@ main {
         .img12 h5 {
             font-family: Arial, sans-serif; /* Fuente del texto */
             font-size: 16px; /* Tamaño de la fuente */
-            color: #be8626; /* Color del texto */
+            color: #868383; /* Color del texto */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra del texto */
             letter-spacing: 1px; /* Espaciado entre letras */
             margin-top: 10px; /* Espacio superior */
-        }
-    
+        } 
 
-/*------------------------------------------------- Organizacion Formularios. ----------------------------------------------------------------------------*/
-
-        
-                /* Estilo CSS */
         /* Utilizamos CSS Grid para organizar los contenedores en 4 columnas */
         #contenedor-formularios-1,
         #contenedor-formularios-2,
@@ -167,8 +160,8 @@ main {
 
         /* Estilos para el footer */
         footer {
-            background-color:  #121212; ; /* Color de fondo del footer */
-            color: #fff; /* Color del texto en el footer */
+            background-color:  #ffd966d3; ; /* Color de fondo del footer */
+            color: #100f0f; /* Color del texto en el footer */
             padding: 20px 0; /* Espaciado interno superior e inferior */
             text-align: center; /* Centrar el texto en el footer */
         }
@@ -215,4 +208,56 @@ main {
 
         .fa-solid {
             font-size: 24px; /* Tamaño de fuente de los íconos de correo electrónico */
+        }  
+
+        /* Animaciones  */
+
+        button {
+            transition: background-color 0.3s ease;
         }
+        
+
+        button:hover {
+            background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
+        }          
+
+        .img1,
+        .img2,
+        .img3,
+        .img4,
+        .img5,
+        .img6,
+        .img7,
+        .img8,
+        .img9,
+        .img10,
+        .img11,
+        .img12 {
+            transition: transform 0.5s linear;
+        }
+        
+        .img1:hover,
+        .img2:hover,
+        .img3:hover,
+        .img4:hover,
+        .img5:hover,
+        .img6:hover,
+        .img7:hover,
+        .img8:hover,
+        .img9:hover,
+        .img10:hover,
+        .img11:hover,
+        .img12:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-png {
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-png:hover {
+            transform: scale(1.2); /* Aumenta el tamaño del logotipo al pasar el cursor */
+        }
+    
+
