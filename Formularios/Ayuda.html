@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda formulario</title>
     <script src="https://kit.fontawesome.com/10d9a6ff24.js" crossorigin="anonymous"></script>
-    <title>Tareas Pendientes Formulario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <style>
-        * {
+      * {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            padding: 0;
         }
 
         main {
@@ -18,26 +18,26 @@
             color: white;
         }
 
-        /* Cambio en la estructura de las columnas */
         #areas {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr; /* Tres columnas en lugar de dos */
-            grid-template-rows: 10vh 60vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
+            grid-template-rows: 10vh 25vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
             grid-template-areas:
                 "header header header" /* Tres columnas en el encabezado */
                 "contenedor-titulo contenedor-titulo contenedor-titulo" /* Tres columnas para el título */
-                "botones-1 botones-1 botones-1" /* Tres columnas para los botones */
-                "contenedor-formulario contenedor-formulario contenedor-formulario"; /* Tres columnas para el formulario */
+                "contenedor-preguntas contenedor-preguntas contenedor-preguntas" /* Tres columnas para el formulario */
+                "contenedor-footer contenedor-footer contenedor-footer"; /* Tres columnas para el footer */
+                
         }
 
         #header {
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            padding: 25px;
-            grid-area: header;
-            border-bottom: 3px solid white;
-            font-size: 23pt;
+        color: white;
+        display:flex;
+        justify-content: space-between;
+        padding: 25px;
+        grid-area: header;
+        border-bottom: 3px solid white;
+        font-size: 23pt;
         }
 
         #contenedor-logo {
@@ -46,93 +46,67 @@
 
         #s-amarilla {
             color: #FFD966;
-            margin-left: 3px;
         }
 
         #selection-system {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            font-weight: 1000;
-            margin-left: 15px;
-        }
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: 1000;
+        }      
 
         #system {
             color: #FFD966;
         }
 
-        .titulo1 {
-            color: #a8a6a2;
-            text-align:initial;
-            font-size: 33px;
+        #titulo1 {
+            color: #f2f2f2;
+            text-align:center;
+            font-size: 24px;
             margin-bottom: 10px;
             gap: 10px;
             font-weight: 1000;
-            padding-left: 495px;
+            padding-left: 45px;
         }
 
-        /* Agregado el estilo para el texto adicional */
-        #texto-adicional {
-            display: flex;
-            width: 100%;
-            justify-content: center;            
-            font-size: 27px;
-            margin-bottom: 30px; /* Ajustado el margen inferior para igualar la altura del título */
-            margin-left: 260px; /* Ajustado el margen izquierdo para centrar el texto */
-            margin-right: 30px; /* Ajustado el margen derecho para centrar el texto */
-            color: gray;
-            box-shadow: 0 0 20px #dddcdb;
-            transition: 0.4s;
-            
-        }
-
-        #contenedor-formulario {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 100px;
-            font-size: 22px;
-            grid-area: contenedor-formulario;
-            box-shadow: 0 0 15px #FFD966;
-            transition: 0.4s;
-            color:gray;
-            border-radius: 2%;
-            border-color: #FFD966;
-        }
-        
-
-
-        .campo {
-            margin-bottom: 20px;
-            margin-left: 30px;
-            width: 100%;
-            max-width: 500px; /* Ancho máximo para el formulario */
-        }
-
-        .campo label {
-            display: block;
-            margin-bottom: 5px;
-            color: #a8a6a2;
-        }
-
-        .campo input {
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
-            color: #a8a6a2;
-
-        }
-
-        .campo1 {
+        #contenedor-preguntas{
+            grid-area: contenedor-preguntas;
             text-align: center;
-            margin-left: 50px;
-            color: #a8a6a2;
+            align-items: center;
+            font-weight: 1000;
+        }
 
+        .pregunta {
+            background-color: #151515;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid  #FFD966;;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out; /* Transición suave para la animación */
 
         }
-        
+
+        /* Estilos para los títulos de las preguntas */
+        .pregunta h3 {
+            color: #FFD966;
+            font-size: 18px;
+        }
+
+        /* Estilos para el texto de las preguntas */
+        .pregunta p {
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Animación de expansión al pasar el mouse */
+        .pregunta:hover {
+            transform: scale(1.05); /* Escala el elemento al 105% del tamaño original */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Cambia la sombra al pasar el mouse */
+        }
 
         /* Estilos para el pie de página */
         footer {
@@ -206,6 +180,7 @@
             font-size: 23px;
             transition: 0.3s;
         }
+
         button {
             transition: background-color 0.3s ease;
         }
@@ -215,9 +190,24 @@
             background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
         }        
 
-
-
+        /* Estilos para el botón de envío */
+        button[type="submit"] {
+            background-color: #FFD966;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
         
+
+        button:hover {
+            background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
+        }       
+
+
     </style>
 </head>
 <body>
@@ -228,40 +218,46 @@
                     <span>S<span id="s-amarilla">S</span></span>
                 </section>
                 <section id="selection-system">
-                    <span>Selection<span id="system"> System</span></span> 
+                <span>Selection<span id="system"> System</span></span> 
                 </section>
+                <br>
+                <br>
             </header>
-            <section id="contenedor-titulo">
+<br>
+            <section id="contenedor-titulo"> 
                 <br>
-                <h1 class="titulo1"><span id="s-amarilla">Tareas</span><span>Pendientes</span></h1>
+                <h1 id="titulo1"><span id="s-amarilla">Preguntas</span> <span>Frecuentes</span></h1>
                 <br>
-                <br>
-                <article id="texto-adicional" onclick="AnimationEffect1()">Completa tus tareas diarias de manera eficiente utilizando nuestro formulario de seguimiento de tareas. Organiza tus responsabilidades y aumenta tu productividad.</article>
-                <br><br>
-                <article id="texto-adicional">Registra tus quehaceres diarios y mantén un control claro de tus tareas pendientes utilizando nuestra herramienta de seguimiento de tareas. ¡Haz tu día más productivo!</article>
             </section>
-            <section id="contenedor-formulario">
-                <form action="" method="POST">
-                    <article class="campo">
-                        <label for="nombre-tarea">Nombre de la tarea:</label>
-                        <input type="text" id="nombre-tarea" name="nombre-tarea" >
-                    </article>
-                    <article class="campo">
-                        <label for="descripcion">Descripción:</label>
-                        <input type="text" id="descripcion" name="descripcion" >
-                    </article>
-                    <article class="campo1">
-                        <button type="submit">Agregar Tarea</button>
-                        <br>
-                        <br>
-                        <a href="/HTML/index.html"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
-                        
-                    </article>
-                    <br>
+<br><br><br>
+            <section id="contenedor-preguntas">
+                <form>
+                    <section id="preguntas-frecuentes">
+                        <article class="pregunta">
+                            <h3>Pregunta 1: ¿Cómo puedo editar mi perfil?</h3>
+                            <br>
+                            <p>Para editar tu perfil, ve a la página de "Configuración de la Cuenta" y haz clic en la opción de "Editar Perfil". Aquí puedes actualizar tu nombre, correo electrónico y contraseña.</p>
+                        </article>
+<br><br><br>
+                        <article class="pregunta">
+                            <h3>Pregunta 2: ¿Cómo buscar candidatos por habilidades?</h3>
+                            <br>
+                            <p>En la página de "Buscar Candidatos", utiliza el campo de "Habilidades" para ingresar las habilidades que deseas buscar. Luego, haz clic en el botón "Buscar" para ver los resultados.</p>
+                        </article>
+<br><br><br>
+                        <article class="pregunta">
+                            <h3>Pregunta 3: ¿Cómo agregar una tarea pendiente?</h3>
+                            <br>
+                            <p>En la página de "Tareas Pendientes", completa el formulario con el nombre y la descripción de la tarea que deseas agregar. Después, haz clic en el botón "Agregar Tarea". Si tienes más preguntas, no dudes en contactarnos.</p>
+                        </article>
+<br><br><br>
+                        <button type="submit">Agregar pregunta</button>
+                    </section>
+<br><br><br>
+                    <a href="/HTML/index.html" class="volver-atras"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
+<br><br><br><br><br><br><br><br><br>
                 </form>
             </section>
-        </section>
-        <br>
             <footer>
 
                 <section id="contenedor-footer">
@@ -292,7 +288,7 @@
                                     <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
-                                </article>
+                                    </article>
                             </article>
 
                             <article id="william">
@@ -312,13 +308,12 @@
                                     <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
-                                </article>
+                                    </article>
                             </article>
 
                             <article id="peter">
                                 <h3>Peter Bustamante</h3>
                                 <span>3044479143</span>
-                                
 
                                 <article id="apps">
                                     <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
@@ -333,7 +328,7 @@
                                     <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
-                                </article>
+                                    </article>
                             </article>
 
                             <article id="capera">
@@ -353,7 +348,7 @@
                                     <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
-                                </article>
+                                    </article>
                             </article>
 
                         </section>
@@ -362,8 +357,6 @@
 
                 </section>
 
-            </footer>        
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    </main>
-</body>
+            </footer>      
+    </body>
 </html>
