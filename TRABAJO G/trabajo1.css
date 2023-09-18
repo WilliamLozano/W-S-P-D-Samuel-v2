@@ -1,3 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400&family=Montserrat&family=Poppins:wght@300&family=Tilt+Prism&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+
+
 body{
     background: black;
 }
@@ -59,14 +68,23 @@ body{
     gap:20px;
     
 }
+
 .pro1{
     margin-left:150px;
+    margin-top:40px;
 }
 .pro2{
     margin-left:100px;
+    margin-top:40px;
+}
+
+.pro3{
+    margin-left:100px;
+    margin-top: 40px;
 }
 .pro5{
     margin-left:100px;
+    margin-top: 60px;
     
 }
 
@@ -89,8 +107,7 @@ h4{
 }
 
 p{
-    margin-left:5px;
-
+    text-aling:center;
 }
 
 #content_welcome {
@@ -165,8 +182,8 @@ p{
 #imagen_1 {
     border: 4px solid #FFD966;
     border:none;
-    border-radius: 100px;
-    height: 90%;
+    border-radius: 90px;
+    height: 60%;
 }
 
 #imagen_1:hover {
@@ -238,6 +255,7 @@ footer:hover {
 .pro7{
     grid-row:3/4;
     grid-column: 1/4;
+    margin-top: 100px;
 }
 
 .logo_png:hover {
