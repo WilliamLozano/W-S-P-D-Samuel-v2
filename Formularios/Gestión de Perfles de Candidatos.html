@@ -3,57 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Perfles de Candidatos formulario</title>
     <script src="https://kit.fontawesome.com/10d9a6ff24.js" crossorigin="anonymous"></script>
-
-    <title>Buscar candidatos Formulario</title>
-    <style>
-       * {
+        <style>
+        * {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-        }
+            }
 
         main {
             background-color: black;
             color: white;
-        }
+            }
 
         #areas {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr; /* Tres columnas en lugar de dos */
-            grid-template-rows: 10vh 25vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
+            grid-template-rows: 10vh 10vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
             grid-template-areas:
-                "header header header" /* Tres columnas en el encabezado */
-                "contenedor-titulo contenedor-titulo contenedor-titulo" /* Tres columnas para el título */
-                "contenedor-formulario contenedor-formulario contenedor-formulario" /* Tres columnas para el formulario */
-                "contenedor-footer contenedor-footer contenedor-footer"; /* Tres columnas para el footer */
-                
+            "header header header" /* Tres columnas en el encabezado */
+            "contenedor-titulo contenedor-titulo contenedor-titulo" /* Tres columnas para el título */
+            "contenedor-formulario contenedor-formulario contenedor-formulario" /* Tres columnas para el formulario */
+            "contenedor-footer contenedor-footer contenedor-footer"; /* Tres columnas para el footer */
+        
         }
 
         #header {
-        color: white;
-        display:flex;
-        justify-content: space-between;
-        padding: 25px;
-        grid-area: header;
-        border-bottom: 3px solid white;
-        font-size: 23pt;
-        }
+            color: white;
+            display:flex;
+            justify-content: space-between;
+            padding: 25px;
+            grid-area: header;
+            border-bottom: 3px solid white;
+            font-size: 23pt;
+            }
 
         #contenedor-logo {
             font-weight: 1000;
-        }
+            }
 
         #s-amarilla {
             color: #FFD966;
-        }
+            }
 
         #selection-system {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        font-weight: 1000;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: 1000;
         }      
 
         #system {
@@ -61,13 +60,13 @@
         }
 
         #titulo1 {
-            color: #f2f2f2;
-            text-align:center;
-            font-size: 25px;
-            margin-bottom: 10px;
-            gap: 10px;
-            font-weight: 1000;
-            padding-left: 40px;
+            text-align: center;
+            margin-left: 40px;
+            font-size:x-large;
+        }
+
+        #contenedor-formulario{
+            grid-area: contenedor-formulario;
         }
 
         /* Estilos para el formulario */
@@ -107,24 +106,19 @@
             border-radius: 3px;
             cursor: pointer;
             font-weight: bold;
-            margin-left: 49%;
-
+            margin-left: 47%;
         }
 
         button[type="submit"]:hover {
             background-color: #FFC800;
         }
 
-        #contenedor-formulario{
-            grid-area: contenedor-formulario;
-        }
-
-        #contenedor-footer{
-            grid-area: contenedor-footer;
+        .volver-atras {
+            margin-left: 49%;
         }
 
         /* Estilos para el pie de página */
-        footer {
+            footer {
         grid-area: contenedor-footer;
         background-color: #FFD966;
         box-shadow: 0 0 10px #0c0c0c;
@@ -142,7 +136,6 @@
             margin: 10px 0; /* Espaciado superior e inferior */
             
         }
-
 
         footer:hover {
             box-shadow: 0 0 40px #FFD966;
@@ -203,17 +196,8 @@
 
         button:hover {
             background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
-        }       
-
-        .volver-atras{
-            margin-left: 50%;
-        }
-        
-        
-
-
-
-    </style>
+        }   
+        </style>
 </head>
 <body>
     <main id="index">
@@ -231,27 +215,42 @@
 <br>
             <section id="contenedor-titulo"> 
                 <br>
-                <h1 id="titulo1"><span id="s-amarilla">Buscar</span> <span>Candidatos</span></h1>
+                <h1 id="titulo1"><span id="s-amarilla">Gestion de</span> <span>Perfiles de Candidatos</span></h1>
                 <br>
             </section>
-        
+
             <section id="contenedor-formulario">
                 <form>
                     <label for="Nombre">Nombre : </label>
                     <input type="text" id="Nombre" name="Nombre">
-<br><br><br> 
-                    <label for="Habilidades">Habilidades : </label>
+<br><br><br>    
+                    <label for="Correo Electronico">Habilidades : </label>
                     <input type="text" id="Habilidades" name="Habilidades">
-<br><br><br> 
-                    <label for="Experiencia">Experiencia : </label>
-                    <textarea id="Experiencia" name="Experiencia"></textarea>
-<br><br><br> 
-                    <button type="submit">Enviar</button>
-<br><br><br>        
-                <a href="/HTML/index.html" class="volver-atras"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
+<br><br><br>
+                    <label for="Experiencia">Experiencia laboral: </label>
+                    <input type="text" id="Experiencia" name="Experiencia">
+<br><br><br>
+                    <button type="submit">Guardar</button>
+<br><br><br>
+                    
+                </form>
+<br><br>
+                <form>
+                    <label for="Nombre">Correo : </label>
+                    <input type="text" id="Correo Electronico" name="Correo Electronico">
+<br><br><br>    
+                    <label for="Id Candidato">Id Candidato : </label>
+                    <input type="text" id="Id Candidato" name="Id Candidato">
+<br><br><br>
+                    <label for="Experiencia">Rol : </label>
+                    <input type="text" id="Rol" name="Rol">
+<br><br><br>
+                    <button type="submit">Guardar</button>
+<br><br><br>
+                    <a href="/HTML/index.html" class="volver-atras"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
 
                 </form>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br>
             </section>
             <footer id="contenedor-footer">
                     
@@ -358,13 +357,13 @@
                                         <br>
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
+
+                                    
                                     </article>
                                 </article>
                             </section>
                         </section>
                     </section>
                 </footer> 
-            </section>
-        </main>
-    </body>
+        </body>
 </html>

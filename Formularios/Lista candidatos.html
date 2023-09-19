@@ -3,57 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Perfles de Candidatos formulario</title>
     <script src="https://kit.fontawesome.com/10d9a6ff24.js" crossorigin="anonymous"></script>
-
-    <title>Buscar candidatos Formulario</title>
-    <style>
-       * {
+        <style>
+        * {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-        }
+            }
 
         main {
             background-color: black;
             color: white;
-        }
+            }
 
         #areas {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr; /* Tres columnas en lugar de dos */
-            grid-template-rows: 10vh 25vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
+            grid-template-rows: 10vh 10vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
             grid-template-areas:
-                "header header header" /* Tres columnas en el encabezado */
-                "contenedor-titulo contenedor-titulo contenedor-titulo" /* Tres columnas para el título */
-                "contenedor-formulario contenedor-formulario contenedor-formulario" /* Tres columnas para el formulario */
-                "contenedor-footer contenedor-footer contenedor-footer"; /* Tres columnas para el footer */
-                
+            "header header header" /* Tres columnas en el encabezado */
+            "contenedor-titulo contenedor-titulo contenedor-titulo" /* Tres columnas para el título */
+            "candidatos-contenedor candidatos-contenedor candidatos-contenedor"
+            "contenedor-formulario contenedor-formulario contenedor-formulario" /* Tres columnas para el formulario */
+            "contenedor-footer contenedor-footer contenedor-footer"; /* Tres columnas para el footer */
+        
         }
 
         #header {
-        color: white;
-        display:flex;
-        justify-content: space-between;
-        padding: 25px;
-        grid-area: header;
-        border-bottom: 3px solid white;
-        font-size: 23pt;
-        }
+            color: white;
+            display:flex;
+            justify-content: space-between;
+            padding: 25px;
+            grid-area: header;
+            border-bottom: 3px solid white;
+            font-size: 23pt;
+            }
 
         #contenedor-logo {
             font-weight: 1000;
-        }
+            }
 
         #s-amarilla {
             color: #FFD966;
-        }
+            }
 
         #selection-system {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        font-weight: 1000;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: 1000;
         }      
 
         #system {
@@ -61,13 +61,13 @@
         }
 
         #titulo1 {
-            color: #f2f2f2;
-            text-align:center;
-            font-size: 25px;
-            margin-bottom: 10px;
-            gap: 10px;
-            font-weight: 1000;
-            padding-left: 40px;
+            text-align: center;
+            margin-left: 40px;
+            font-size:x-large;
+        }
+
+        #contenedor-formulario{
+            grid-area: contenedor-formulario;
         }
 
         /* Estilos para el formulario */
@@ -107,24 +107,19 @@
             border-radius: 3px;
             cursor: pointer;
             font-weight: bold;
-            margin-left: 49%;
-
+            margin-left: 45%;
         }
 
         button[type="submit"]:hover {
             background-color: #FFC800;
         }
 
-        #contenedor-formulario{
-            grid-area: contenedor-formulario;
-        }
-
-        #contenedor-footer{
-            grid-area: contenedor-footer;
+        .volver-atras {
+            margin-left: 49%;
         }
 
         /* Estilos para el pie de página */
-        footer {
+            footer {
         grid-area: contenedor-footer;
         background-color: #FFD966;
         box-shadow: 0 0 10px #0c0c0c;
@@ -142,7 +137,6 @@
             margin: 10px 0; /* Espaciado superior e inferior */
             
         }
-
 
         footer:hover {
             box-shadow: 0 0 40px #FFD966;
@@ -203,17 +197,95 @@
 
         button:hover {
             background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
-        }       
+        }  
 
-        .volver-atras{
-            margin-left: 50%;
+        /* Estilos para el botón de envío del menú */
+        .menu-button {
+            /* ... otros estilos ... */
+            position: relative; /* Establece posición relativa en el botón de menú */
+            background-color: #FFD966;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 5px;
+            transition: background-color 0.3s ease;
         }
-        
-        
 
+        /* Estilos para el menú desplegable */
+        .menu-dropdown {
+            position: absolute; /* Establece posición absoluta para el menú */
+            top: 30%; /* Coloca el menú debajo del botón de menú */
+            left: 21%; /* Alinea el menú a la izquierda del botón de menú */
+            background-color: #131212cb;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+        }
 
+        /* Estilos para las opciones del menú */
+        .menu-item {
+            padding: 10px;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
 
-    </style>
+        /* Estilos para las opciones del menú al pasar el mouse */
+        .menu-item:hover {
+            background-color: #FFD966;
+        }
+
+        .candidato-1,
+        .candidato-2 {
+        display: inline-block;
+        text-align: center;
+        align-items: center;
+        font-size: x-large;
+        width: 48%; /* Ajusta el ancho para dejar espacio entre los candidatos */
+        margin-left: 27%;
+        color: #ffc8008b;
+        }
+
+        #candidatos-contenedor{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .img-1,
+        .img-2{
+            transition: transform 0.5s linear;
+        }
+
+        .img-1:hover,
+        .img-2:hover{
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .candidato-1,
+        .candidato-2{
+            transition: transform 0.5s linear;
+        }
+
+        .candidato-1:hover,
+        .candidato-2:hover{
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-png {
+            transition: transform 0.3s ease;
+        }
+
+        .logo-png:hover {
+            transform: scale(1.2); /* Aumenta el tamaño del logotipo al pasar el cursor */
+        }
+        </style>
 </head>
 <body>
     <main id="index">
@@ -231,27 +303,90 @@
 <br>
             <section id="contenedor-titulo"> 
                 <br>
-                <h1 id="titulo1"><span id="s-amarilla">Buscar</span> <span>Candidatos</span></h1>
+                <h1 id="titulo1"><span id="s-amarilla">Gestion de</span> <span>Perfiles de Candidatos</span></h1>
                 <br>
             </section>
-        
+
             <section id="contenedor-formulario">
                 <form>
-                    <label for="Nombre">Nombre : </label>
-                    <input type="text" id="Nombre" name="Nombre">
-<br><br><br> 
-                    <label for="Habilidades">Habilidades : </label>
-                    <input type="text" id="Habilidades" name="Habilidades">
-<br><br><br> 
-                    <label for="Experiencia">Experiencia : </label>
-                    <textarea id="Experiencia" name="Experiencia"></textarea>
-<br><br><br> 
-                    <button type="submit">Enviar</button>
-<br><br><br>        
-                <a href="/HTML/index.html" class="volver-atras"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
+                
+
+                
+                <h2>Ordenar y Filtrar por :  <button class="menu-button" onclick="toggleMenu()">Nombre <img src="/Img/down-arrow-svgrepo-com.svg" alt="pa bajo" height="15px" width="15px"></button></h2>
+                <br><br>
+                
+                <section class="candidatos-contenedor">
+                    <article class="candidato-1">
+
+                        <img src="/Img/Logo Proyecto.png" alt="Imagen candidato" width="150px" height="150px" class="img-1">
+<br><br>
+                        <h5>Candidato : 1
+                            <br><br>
+                            Nombre del candidato : William Andrés Lozano Salazar
+                            <br><br>
+                            Experiencia Laboral : 5 Años
+                            <br><br>
+                            Educación: Instutucion Educativa Compartir
+                            <br><br>
+                            Edad: 18 Años
+                            <br><br>
+                            Habilidades : Html, Css y Javascript
+<br><br><br>
+
+                            </h5>
+                    </article>
+<br><br><br><br><br><br><br>
+                    <article class="candidato-2">
+
+                        <img src="/Img/Logo Proyecto.png" alt="Imagen candidato" width="150px" height="150px" class="img-2">
+<br><br>
+                        <h5>Candidato : 2
+                            <br><br>
+                            Nombre del candidato : Juan Carlos Pedranza Koto
+                            <br><br>
+                            Experiencia Laboral : 1 Años
+                            <br><br>
+                            Educación: Instutucion Educativa Chevalier
+                            <br><br>
+                            Edad: 28 Años
+                            <br><br>
+                            Habilidades : Html, Css y Python
+
+                            </h5>
+
+                    </article>
+<br><br><br><br><br><br><br>
+                    <article>
+                        <button type="submit">Guardar Perfiles</button>
+                        <br><br><br>
+                        <a href="/HTML/index.html" class="volver-atras"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
+                    </article>
+                </section>
+                
+                
+                <section id="menuDropdown" class="menu-dropdown">
+                    <a class="menu-item" href="#"><button class="menu-button">Nombre</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button">Apellido</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button">Experiencia</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button">Id Candidato</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button">Educación</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button">Habilidades</button></a>
+                </section>
+
+                <script>
+                    function toggleMenu() {
+                        var menu = document.getElementById("menuDropdown");
+                        if (menu.style.display === "none" || menu.style.display === "") {
+                            menu.style.display = "block";
+                        } else {
+                            menu.style.display = "none";
+                        }
+                    }
+                </script>
+
 
                 </form>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br>
             </section>
             <footer id="contenedor-footer">
                     
@@ -358,13 +493,13 @@
                                         <br>
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
+
+                                    
                                     </article>
                                 </article>
                             </section>
                         </section>
                     </section>
                 </footer> 
-            </section>
-        </main>
-    </body>
+        </body>
 </html>
