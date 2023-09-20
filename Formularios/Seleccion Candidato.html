@@ -66,6 +66,10 @@
             font-size:x-large;
         }
 
+        #contenedor-titulo{
+            font-size:xx-large;
+        }
+
         #contenedor-formulario{
             grid-area: contenedor-formulario;
         }
@@ -218,11 +222,12 @@
         .menu-dropdown {
             position: absolute; /* Establece posición absoluta para el menú */
             top: 30%; /* Coloca el menú debajo del botón de menú */
-            left: 13%; /* Alinea el menú a la izquierda del botón de menú */
+            left: 21%; /* Alinea el menú a la izquierda del botón de menú */
             background-color: #131212cb;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             border-radius: 5px;
             z-index: 1;
+            display: none;
         }
 
         /* Estilos para las opciones del menú */
@@ -286,16 +291,58 @@
             transform: scale(1.2); /* Aumenta el tamaño del logotipo al pasar el cursor */
         }
 
-        .b1{
+        #filtro-buttons {
+        display: flex;
+        justify-content: space-between;
+        }
+
+        .filtro-button-left {
+        flex: 1; /* Toma todo el espacio disponible a la izquierda */
+        }
+
+        .filtro-button-right {
+        flex: 1; /* Toma todo el espacio disponible a la derecha */
+        text-align: right; /* Alinea el botón de filtros avanzados a la derecha */
+        }
+
+        .menu-button.avanzados {
+        background-color: #FFD966;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        }
+
+        /* Estilos para el botón de envío del menú */
+        .menu-button-1 {
+            position: relative; /* Establece posición relativa en el botón de menú */
             background-color: #FFD966;
             color: black;
             padding: 10px 20px;
             border: none;
-            border-radius: 3px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
-            margin-left: 0%;
+            margin-left: 5px;
+            transition: background-color 0.3s ease;
         }
+
+        /* Estilos para el menú desplegable */
+        .menu-dropdown-1 {
+            position: absolute; /* Establece posición absoluta para el menú */
+            top: 30%; /* Coloca el menú debajo del botón de menú */
+            left: 86%; /* Alinea el menú a la izquierda del botón de menú */
+            background-color: #131212cb;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+            display: none;
+        }
+
+        
+
         </style>
 </head>
 <body>
@@ -314,17 +361,23 @@
 <br>
             <section id="contenedor-titulo"> 
                 <br>
-                <h1 id="titulo1"><span id="s-amarilla">Seleccion de</span> <span>Candidatos</span></h1>
+                    <h1 id="titulo1"><span id="s-amarilla">Seleccion de</span> <span>Candidatos</span></h1>
                 <br>
             </section>
 
             <section id="contenedor-formulario">
                 <form>
                 
-                
-                
-                <h2>Marcar como :  <button class="menu-button" onclick="toggleMenu()">Apto <img src="/Img/down-arrow-svgrepo-com.svg" alt="pa bajo" height="15px" width="15px"></button></h2>
-                <br><br>
+                    <article id="filtro-buttons">
+                        <article class="filtro-button-left">
+                            <h2>Ordenar Por :  <button class="menu-button" onclick="toggleMenu()">Nombre <img src="/Img/down-arrow-svgrepo-com.svg" alt="pa bajo" height="15px" width="15px"></button></h2>
+                        </article>
+                        <article class="filtro-button-right">
+                            <h2>Filtros Por :  <button class="menu-button avanzados" onclick="toggleMenu1()">Candidato <img src="/Img/down-arrow-svgrepo-com.svg" alt="pa bajo" height="15px" width="15px"></button></h2>
+                        </article>
+                    </article>
+
+<br><br>
                 
                 <section class="candidatos-contenedor">
                     <article class="candidato-1">
@@ -364,45 +417,60 @@
                             Habilidades : Html, Css y Python
 
                             </h5>
+<br><br>
 
                     </article>
-
-<br><br><br><br><br><br><br>
-
                     <article>
-                        <h2>Marcar como :  <button class="menu-button" onclick="toggleMenu()">Eliminado <img src="/Img/down-arrow-svgrepo-com.svg" alt="pa bajo" height="15px" width="15px"></button></h2>
-                    </article>
-
-                </section>
-<br><br><br>
-                    <article>
-                        <button type="submit">Guardar Perfiles</button> 
+                        <button type="submit">Guardar Perfiles</button>
                         <br><br><br>
                         <a href="/HTML/index.html" class="volver-atras"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
                     </article>
+                </section>
                 
                 
                 <section id="menuDropdown" class="menu-dropdown">
+
                     <a class="menu-item" href="#"><button class="menu-button">Nombre</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button">Educacion</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button">Edad</button></a>
                     <a class="menu-item" href="#"><button class="menu-button">Apellido</button></a>
                     <a class="menu-item" href="#"><button class="menu-button">Experiencia</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button">Telefono</button></a>
                     <a class="menu-item" href="#"><button class="menu-button">Id Candidato</button></a>
                     <a class="menu-item" href="#"><button class="menu-button">Educación</button></a>
                     <a class="menu-item" href="#"><button class="menu-button">Habilidades</button></a>
+
+                    <script>
+                        function toggleMenu() {
+                            var menu = document.getElementById("menuDropdown");
+                            if (menu.style.display === "none" || menu.style.display === "") {
+                                menu.style.display = "block";
+                            } else {
+                                menu.style.display = "none";
+                            }
+                        }
+                    </script>
                 </section>
 
-                <script>
-                    function toggleMenu() {
-                        var menu = document.getElementById("menuDropdown");
-                        if (menu.style.display === "none" || menu.style.display === "") {
-                            menu.style.display = "block";
-                        } else {
-                            menu.style.display = "none";
+                <section id="menuDropdown-1" class="menu-dropdown-1">
+
+                    <a class="menu-item" href="#"><button class="menu-button-1">Ubicación</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button-1">Correo</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button-1">Rol</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button-1">Resumen</button></a>
+                    <a class="menu-item" href="#"><button class="menu-button-1">Tipo de Empresa</button></a>
+
+                    <script>
+                        function toggleMenu1() {
+                            var menu = document.getElementById("menuDropdown-1");
+                            if (menu.style.display === "none" || menu.style.display === "") {
+                                menu.style.display = "block";
+                            } else {
+                                menu.style.display = "none";
+                            }
                         }
-                    }
-                </script>
-
-
+                    </script>
+                </section>
                 </form>
                 <br>
             </section>

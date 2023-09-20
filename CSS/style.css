@@ -15,7 +15,7 @@ main {
 #areas {
     display: grid;
     grid-column: 1fr 1fr;
-    grid-row: 10vh 60vh 30vh;
+    grid-row: 5vh 45vh 5vh;
     grid-template-areas:
         "header    header"
         "contenedor-titulo contenedor-titulo"
@@ -33,20 +33,19 @@ main {
     padding: 25px;
     grid-area: header;
     border-bottom: 3px solid white;
-    font-size: 23pt;
 }
 
 /* Logo corresponde al contenedor en el que están las dos "S" que representan el logo de la marca, en este caso se le dará un peso "negrilla" de 1000 */
 #contenedor-logo {
     font-weight: 1000;
-    
+    font-size: 35pt;
+
 }
 
 /* Se desea cambiar el color de la segunda "S" del logo y darle un espacio de 3px entre ellas con un margin-left */
 #s-amarilla {
     color: #FFD966;
-    margin-left: 3px;
-    
+    margin-left: 2px;
 }
 
 /* Este contenedor hace referencia al nombre del proyecto, donde se le darán las propiedades de display: flex para que dicho contenedor se pueda alinear al centro de la página y alinear al centro del contenedor. Se podrá hacer ya que el contenedor está ocupando el 100% de la pantalla a lo ancho, así que todo se pondrá al centro de esta, y con la propiedad font-weight toma un peso de 1000 */
@@ -57,7 +56,6 @@ main {
     align-items: center;
     gap: 10px;
     font-weight: 1000;
-    
 }
 
 /* Al nombre "system" se le dará otro color diferente al blanco dado por defecto en la etiqueta main */
@@ -74,11 +72,14 @@ main {
     align-items: center;
     padding-left: 40px;
     font-size: x-large;
+    color: #ffcc00;
 }
 
 .titulo2 {
     justify-content: center;
-    padding-left: 150px;
+    padding-left: 12%;
+    color: #ffcc00c1;
+
 }
 
 #botones-1 {
@@ -158,47 +159,90 @@ main {
             margin-right: auto;
         }
 
-        /* Estilos para el footer */
+        /* Estilos para el pie de página */
         footer {
-            background-color:  #ffd966d3; ; /* Color de fondo del footer */
+            position: static; /* Fija el pie de página en la parte inferior */
+            bottom: 0; /* Alinea el pie de página en la parte inferior de la ventana */
+            left: 0; /* Alinea el pie de página a la izquierda */
+            right: 0; /* Alinea el pie de página a la derecha */
+            background-color: #FFD966;
+            box-shadow: 0 0 5px #0c0c0c;
+            background-color:  #ffd966d3; /* Color de fondo del footer */
             color: #100f0f; /* Color del texto en el footer */
-            padding: 20px 0; /* Espaciado interno superior e inferior */
+            padding: 10px 0; /* Espaciado interno superior e inferior */
             text-align: center; /* Centrar el texto en el footer */
+            z-index: 1; /* Asegura que el pie de página esté en la parte superior de otros elementos */
         }
 
-        /* Estilos para el contenedor principal del footer */
-        #contenedor-footer {
-            display: flex;
-            justify-content: column; /* Centramos todos los elementos en una sola línea */
-        }
-
-        /* Estilos para los elementos internos del footer (cada sección de contacto) */
-        .union {
-            flex-basis: calc(25% - 20px); /* Cada elemento ocupa un cuarto del ancho disponible con margen de 20px */
-            text-align: center;
-            margin-bottom: 20px; /* Espaciado inferior entre secciones de contacto */
-            padding: 20px; /* Espaciado interno */
-        }
-
-        .contenedor-img {
-            margin-bottom: 10px; /* Espaciado inferior entre la imagen y la información de contacto */
-        }
-
-        .logo-png {
-            width: 100px; /* Ancho de la imagen del logo */
-            height: 100px; /* Altura de la imagen del logo */
-        }
-
-        /* Estilos para los nombres de contacto */
-        h3 {
-            font-size: 18px; /* Tamaño de fuente de los nombres */
-            margin: 10px 0; /* Espaciado superior e inferior */
-        }
-
-        /* Estilos para los números de contacto */
-        span {
-            font-size: 16px; /* Tamaño de fuente de los números */
-        }
+    
+            
+            /* Estilos para los nombres de contacto */
+            h3 {
+                font-size: 18px; /* Tamaño de fuente de los nombres */
+                margin: 10px 0; /* Espaciado superior e inferior */
+                
+            }
+    
+            footer:hover {
+                box-shadow: 0 0 40px #FFD966;
+                transition: 0.4s;
+            }
+    
+            #union {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #0c0c0c;
+            }
+    
+            #contenedor-img {
+                width: 7%;
+                margin-left: 10px;
+            }
+    
+            #logo-png {
+                display: flex;
+                width: 160px;
+                height: 117px;
+            }
+    
+            #info-footer {
+                display: flex;
+                color: black;
+                width: 90%;
+                justify-content: space-evenly;
+            }
+    
+            #sebas,#william,#peter,#capera {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 8px;
+            }
+    
+            #apps {
+                display: flex;
+                gap: 15px;
+            }
+    
+            #apps i{
+                color:black
+            }
+    
+            #apps i:hover{
+                color:black;
+                font-size: 23px;
+                transition: 0.3s;
+            }
+    
+            button {
+                transition: background-color 0.3s ease;
+            }
+            
+    
+            button:hover {
+                background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
+            }  
 
         /* Estilos para los íconos de redes sociales */
         .fa-brands {
