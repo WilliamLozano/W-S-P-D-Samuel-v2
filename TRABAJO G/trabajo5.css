@@ -93,3 +93,8 @@ button:hover::before {
     margin-left: 60px;
     margin-top: 50px;
 }
+.home1{
+    margin-top:70px;
+    margin-block-start: 2%;
+    margin-left:50px;
+ }
