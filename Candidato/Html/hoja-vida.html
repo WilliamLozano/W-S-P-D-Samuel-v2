@@ -149,7 +149,25 @@
 
                             <article class="contenedor-rol">
                                 <h3 class="titulo">Rol</h3>
-                                <input class="input" type="text" value="Candidato"/>
+                                <select class="menu-roles" name="roles">
+                                    <option value="instructor">Instructor</option>
+                                    <option value="seleccionador">Seleccionador</option>
+                                    <option value="reclutador">Reclutador</option>
+                                    <option value="candidato">Candidato</option>
+                                </select>
+                                <!-- <h3 class="titulo">Rol</h3>
+                                <input class="input" type="text" value="Candidato"/> -->
+                            </article>
+
+                            <article class="contenedor-genero">
+                                <h3 class="titulo">Genero</h3>
+                                <select class="menu-generos" name="genero">
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <!-- <h3 class="titulo">Rol</h3>
+                                <input class="input" type="text" value="Candidato"/> -->
                             </article>
 
                             <article class="contenedor-telefono">
@@ -170,9 +188,52 @@
                                 <h2 class="titulo">Datos profesionales</h2>
                             </article>
 
-                            <article class="contenedor-profesion">
-                                <h4 class="titulo">Profesion</h4>
-                                <input class="input" type="text" />
+                            <article class="contenedor-educacion">
+                                <h4 class="titulo">Educacion</h4>
+                                <input id="input" type="file"/>
+
+                                <article class="flex">
+                                    <article class="texto">
+                                        <i class="fa-solid fa-download" style="color: #000000;"></i>
+                                        <label for="input">Seleccionar archivo</label>
+                                    </article>
+
+                                    <article class="contenedor-boton">
+                                        <button class="boton">+ Mas</button>
+                                    </article>
+                                </article>
+                            </article>
+
+                            <article class="contenedor-experiencia">
+
+                                <article class="empresa">
+                                    <h1 class="titulo">Empresa</h1>
+                                    <input class="input" type="text"/>
+                                </article>
+
+                                <article class="experiencia">
+                                    <h1 class="titulo">Meses de experiencia</h1>
+                                    <input class="input" type="text"/>
+                                </article>
+
+                            </article>
+
+                            <article class="contenedor-flex">
+                                    
+                                <h1 class="titulo">Documentos experiencia empresarial</h1>
+
+                                <article class="flex-2">
+                                    <article class="texto">
+                                        <i class="fa-solid fa-download" style="color: #000000;"></i>
+                                        <label for="input">Seleccionar archivo</label>
+                                    </article>
+
+                                    <article class="contenedor-boton-2">
+                                        <button class="boton-2">+ Mas</button>
+                                    </article>
+
+                                </article>
+
                             </article>
 
                             <article class="perfil-ocupacional">
