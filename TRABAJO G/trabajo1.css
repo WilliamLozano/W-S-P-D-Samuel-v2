@@ -273,3 +273,12 @@ footer:hover {
 .pro7:hover {
     transform: scale(1.2);
 }
+
+.id{
+    transform: scale(1.2);
+}
+
+p{
+    font-family: arial;
+    font-size: 17px;
+}
