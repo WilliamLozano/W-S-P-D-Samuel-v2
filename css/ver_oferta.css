@@ -87,9 +87,13 @@
     
 }
 .boton-crear{
+    text-decoration: none;
+    color:black;
     background-color: #FFD966;
 }
 .boton-ver{
+    text-decoration: none;
+    color: #000000;
     background-color: #4D4D4D;
 }
 .retroceso{
@@ -112,6 +116,12 @@
     margin-top: 5px;
     cursor: pointer;
     border-radius: 20px;
+    text-decoration: none;
+    color:black;
+}
+.boton-inicio{
+    text-decoration: none;
+    color: #000000;
 }
 .retroceso .boton:hover{
     color: white;

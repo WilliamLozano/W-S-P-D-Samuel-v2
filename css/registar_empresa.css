@@ -86,9 +86,14 @@
     
 }
 .boton-crear{
+    text-decoration: none;
+    color:black;
     background-color: #FFD966;
 }
 .boton-ver{
+    
+    text-decoration: none;
+    color: #000000;
     background-color: #4D4D4D;
 }
 .retroceso{
@@ -99,6 +104,8 @@
     
 }
 .retroceso .boton{
+    color: #242424;
+    text-decoration: none;
     background-color: #FFD966;
     display: flex;
     justify-content: center;
@@ -166,59 +173,52 @@ samp.amarillo{
     height: 80%;
     margin-top: 10Px;
     padding: 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "cargos  cargos" "especializacion ubach" "especializacion ubach";
+    display: grid; 
     gap: 20px;
     border-radius: 20px;
     border: 5px solid rgb(127, 127, 127);
 }
 .recuadro section{
+    
     border-radius: 10px;
     background-color: rgb(196, 196, 196);
     border:3px solid #242424;
     gap: 20px;
 }
 /* ------------------------------------------------------------ */
-.cargos{
-    grid-area: cargos;
-    width: 100%;
-    height: 100%;
+.datos_empresa{
+    display: grid;
 }
-.poner-cargos, .especilaizaciones {
-    display: flex;
-    width: 100%;
+.identificacion{
+    display: grid;
     align-items: end;
+    grid-template-columns: 1fr 1fr;
 }
-.cargos label{
+.ubicacion{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+label input:hover{
+    border-radius: 10px;
+    transition: 1s;
+    box-shadow:0 0 8px  #242424;
+}
+
+
+
+.datos_empresa label{
     width: 100%;
-    
 }
-label input{
-    border:none
-}
-.cargos label input{
+
+
+.datos_empresa label input{
     width: 90%;
     height: 40px;
     border: none;
 }
 /* ------------------------------------------------------------ */
-.especilalizacion{
-    display: flex;
-}
-.especificaciones{
-    grid-area: especializacion;
-    width: 80%;
-    height: 100%;
-    
-    
-}
-.ubicacion{
-    width: 80%;
-    height: 100%;
-    
-}
+
 .archivar{
     width: 80%;
     height: 100%;

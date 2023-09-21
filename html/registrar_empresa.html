@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Index Proyecto</title>
-    <link rel="stylesheet" href="registar.css">
+    <link rel="stylesheet" href="/css/registar_empresa.css">
     <script src="https://kit.fontawesome.com/10d9a6ff24.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -31,12 +31,12 @@
 
         </section>
         <section class="filtro">
-            <section class="boton boton-crear">crear</section>
-            <section class="boton boton-ver">ver</section>
-
+            <a class="boton boton-crear" href="ver_oferta.html">ver oferta</a>
+            <a href="ver_empresa.html" class="boton boton-ver">ver empresas</a>
+<!--------------------------------------------------------------------------------------------------------------------------------------------->
         </section>
         <section class="retroceso">
-            <section class="boton inicio-boton">inicio</section>
+            <a class="boton inicio-boton" href="index-reclutador.html" >inicio</a>
             <section class="boton anterio-boton">anterior</section>
         </section>
         
@@ -44,81 +44,51 @@
     <section class="busqueda-empresas">
         <section class="barra">
             <samp class="amarillo">Registro</samp>
-            <samp >oferta</samp>
+            <samp >empresa</samp>
 
         </section>
         
             <section class="recuadro">
-                <section class="cargos">
-                    <div class="poner-cargos">
-                        <label for="cargo_principal">
-                            <h2>cargo principal</h2>
-                            <input id="cargo_principal" name="cargo_principal">
-                        </label>
-
-                        <label for="nombre_cargo">
-                            <h1>nombre de cargo</h1>
-                            <input id="nombre_cargo" name="nombre_cargo">
-                        </label>
-                    </div>
-
-                    <div class="especilalizacion">
-                        <label for="habilidades">
-                            <h1>habilidades</h1>
-                            <input id="habilidades" name="habilidades">
-                        </label>
-
-                        <label for="competencias">
-                            <h1>competencias</h1>
-                            <input id="competencias" name="competencias">
-                        </label>
-                    </div>
-                    <h1>numero de bacantes</h1>
-                </section >
-                <section class="especificaciones">
-                    <label for="meses_experiencia">
-                        <h1>meses de experiencia</h1>
-                        <input id="meses_experiencia" name="meses_experiencia">
-                    </label>
-
-                    <label for="tipo_contrato">
-                        <h1>tipo de contrato</h1>
-                        <input id="tipo_contrato" name="tipo_contrato">
-                    </label>
-
-                    <label for="tipo_salrio">
-                        <h1>tipo de salrio</h1>
-                        <input id="tipo_salrio" name="tipo_salrio">
-                    </label>
-
-                    <label for="salrio">
-                        <h1>salrio</h1>
-                        <input id="salrio" name="salrio">
-                    </label>
-
-                    <label for="jornada_laboral">
-                        <h1>jornada laboral</h1>
-                        <input id="jornada_laboral" name="jornada_laboral">
-                    </label>
+                <section class="datos_empresa">
                     
-                </section>
-                
-                <section class="ubicacion">
-                    <label for="pais">
-                        <h1>pais</h1>
-                        <input id="pais" name="pais">
-                    </label>
+                        <div class="identificacion">
+                            <label for="NIT">
+                                <h2>NIT</h2>
+                                <input id="NIT" name="NIT">
+                            </label>
 
-                    <label for="departamento">
-                        <h1>departamento</h1>
-                        <input id="departamento" name="departamento">
-                    </label>
+                            <label for="razon social">
+                                <h1>razon social </h1>
+                                <input id="razon social" name="razon social">
+                            </label>
+                        </div>
 
-                    <label for="ciudad">
-                        <h1>ciudad</h1>
-                        <input id="ciudad" name="ciudad">
-                    </label>
-                    
+                        <div class="ubicacion">
+
+                            <label for="pais">
+                                <h1>pais</h1>
+                                <input id="pais" name="pais">
+                            </label>
+                        
+                            <label for="direccion">
+                                <h1>direccion</h1>
+                                <input id="direccion" name="direccion">
+                            </label>
+                        
+                            <label for="departamento">
+                                <h1>departamento</h1>
+                                <input id="departamento" name="departamento">
+                            </label>
+                        
+                            <label for="telefono">
+                                <h1>telefono</h1>
+                                <input id="telefono" name="telefono">
+                            </label>
+                            <label for="ciudad">
+                                <h1>ciudad</h1>
+                                <input id="ciudad" name="ciudad">
+                            </label>
+                    </div>
                 </section >
                 <section class="archivar">
                     <h1>registar manual de funciones </h1>
@@ -129,7 +99,7 @@
     </section>
 
 
-        </section>
+</section>
         
 
 
