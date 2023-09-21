@@ -195,11 +195,6 @@ li {
 
 .contenedor-content .contenedor-oferta .grupo-oferta .informacion-oferta .contenedor-botones {
     display: flex;
-    width: 100%;
-    height: 16%;
-    justify-content: end;
-    right: 23%;
-    align-items: center;
     position: relative;
     top: 5%;
 }
