@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Perfles de Candidatos formulario</title>
     <script src="https://kit.fontawesome.com/10d9a6ff24.js" crossorigin="anonymous"></script>
-        <style>
+    <style>
         * {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            }
-
+        }
+        
         main {
             background-color: black;
             color: white;
-            }
-
+        }
+        
         #areas {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* Tres columnas en lugar de dos */
-            grid-template-rows: 10vh 10vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
-            grid-template-areas:
-            "header header header" /* Tres columnas en el encabezado */
-            "contenedor-titulo contenedor-titulo contenedor-titulo" /* Tres columnas para el título */
-            "contenedor-formulario contenedor-formulario contenedor-formulario" /* Tres columnas para el formulario */
-            "contenedor-footer contenedor-footer contenedor-footer"; /* Tres columnas para el footer */
-        
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Tres columnas en lugar de dos */
+            grid-template-rows: 10vh 10vh auto;
+            /* Cambiado el tamaño de la última fila para el pie de página */
+            grid-template-areas: "header header header"/* Tres columnas en el encabezado */
+            "contenedor-titulo contenedor-titulo contenedor-titulo"/* Tres columnas para el título */
+            "contenedor-formulario contenedor-formulario contenedor-formulario"/* Tres columnas para el formulario */
+            "contenedor-footer contenedor-footer contenedor-footer";
+            /* Tres columnas para el footer */
         }
-
+        
         #header {
             color: white;
-            display:flex;
+            display: flex;
             justify-content: space-between;
             padding: 25px;
             grid-area: header;
             border-bottom: 3px solid white;
             font-size: 23pt;
-            }
-
+        }
+        
         #contenedor-logo {
             font-weight: 1000;
-            }
-
+        }
+        
         #s-amarilla {
             color: #FFD966;
-            }
-
+        }
+        
         #selection-system {
             display: flex;
             width: 100%;
@@ -53,51 +55,51 @@
             align-items: center;
             gap: 10px;
             font-weight: 1000;
-        }      
-
+        }
+        
         #system {
             color: #FFD966;
         }
-
+        
         #titulo1 {
             text-align: center;
             margin-left: 40px;
-            font-size:x-large;
+            font-size: x-large;
         }
-
-        #contenedor-formulario{
+        
+        #contenedor-formulario {
             grid-area: contenedor-formulario;
         }
-
         /* Estilos para el formulario */
+        
         form {
             background-color: #070707;
             border-radius: 3px;
-            border: 1px solid  #ffd966a5; 
+            border: 1px solid #ffd966a5;
             padding: 25px;
             border-radius: 5px;
         }
-
         /* Estilos para las etiquetas de los campos */
+        
         label {
             display: block;
             color: #FFD966;
             margin-bottom: 15px;
         }
-
         /* Estilos para los campos de entrada de texto */
+        
         input[type="text"],
         textarea {
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
-            border: 1px solid  #FFD966;
+            border: 1px solid #FFD966;
             border-radius: 3px;
             background-color: #444;
             color: white;
         }
-
         /* Estilos para el botón de envío */
+        
         button[type="submit"] {
             background-color: #FFD966;
             color: black;
@@ -106,104 +108,113 @@
             border-radius: 3px;
             cursor: pointer;
             font-weight: bold;
-            margin-left: 47%;
+            margin-left: 48%;
         }
-
+        
         button[type="submit"]:hover {
             background-color: #FFC800;
         }
-
+        
         .volver-atras {
             margin-left: 49%;
         }
-
         /* Estilos para el pie de página */
-            footer {
-        grid-area: contenedor-footer;
-        background-color: #FFD966;
-        box-shadow: 0 0 10px #0c0c0c;
-        background-color:  #ffd966d3; ; /* Color de fondo del footer */
-        color: #100f0f; /* Color del texto en el footer */
-        padding: 20px 0; /* Espaciado interno superior e inferior */
-        text-align: center; /* Centrar el texto en el footer */
-        }
-
         
-
-        /* Estilos para los nombres de contacto */
-        h3 {
-            font-size: 18px; /* Tamaño de fuente de los nombres */
-            margin: 10px 0; /* Espaciado superior e inferior */
-            
+        footer {
+            grid-area: contenedor-footer;
+            background-color: #FFD966;
+            box-shadow: 0 0 10px #0c0c0c;
+            background-color: #ffd966d3;
+            ;
+            /* Color de fondo del footer */
+            color: #100f0f;
+            /* Color del texto en el footer */
+            padding: 20px 0;
+            /* Espaciado interno superior e inferior */
+            text-align: center;
+            /* Centrar el texto en el footer */
         }
-
+        /* Estilos para los nombres de contacto */
+        
+        h3 {
+            font-size: 18px;
+            /* Tamaño de fuente de los nombres */
+            margin: 10px 0;
+            /* Espaciado superior e inferior */
+        }
+        
         footer:hover {
             box-shadow: 0 0 40px #FFD966;
             transition: 0.4s;
         }
-
+        
         #union {
             display: flex;
             align-items: center;
             gap: 10px;
             color: #0c0c0c;
         }
-
+        
         #contenedor-img {
             width: 7%;
             margin-left: 10px;
         }
-
+        
         #logo-png {
             display: flex;
             width: 160px;
             height: 117px;
         }
-
+        
         #info-footer {
             display: flex;
             color: black;
             width: 90%;
             justify-content: space-evenly;
         }
-
-        #sebas,#william,#peter,#capera {
+        
+        #sebas,
+        #william,
+        #peter,
+        #capera {
             display: flex;
             align-items: center;
             flex-direction: column;
             gap: 8px;
         }
-
+        
         #apps {
             display: flex;
             gap: 25px;
         }
-
-        #apps i{
-            color:black
+        
+        #apps i {
+            color: black
         }
-
-        #apps i:hover{
-            color:black;
+        
+        #apps i:hover {
+            color: black;
             font-size: 23px;
             transition: 0.3s;
         }
-
+        
         button {
             transition: background-color 0.3s ease;
         }
         
-
         button:hover {
-            background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
-        }   
-
+            background-color: #ffcc00;
+            ;
+            /* Cambia el color de fondo al pasar el cursor */
+        }
+        
         .titulo3 {
             font-size: x-large;
             color: #FFC800;
         }
-        </style>
+    </style>
 </head>
+
 <body>
     <main id="index">
         <section id="areas">
@@ -212,13 +223,13 @@
                     <span>S<span id="s-amarilla">S</span></span>
                 </section>
                 <section id="selection-system">
-                <span>Selection<span id="system"> System</span></span> 
+                    <span>Selection<span id="system"> System</span></span>
                 </section>
                 <br>
                 <br>
             </header>
-<br>
-            <section id="contenedor-titulo"> 
+            <br>
+            <section id="contenedor-titulo">
                 <br>
                 <h1 id="titulo1"><span id="s-amarilla">Perfil de</span> <span>Candidatos</span></h1>
                 <br>
@@ -226,89 +237,89 @@
 
             <section id="contenedor-formulario">
                 <form>
-                    
+
                     <h2 class="titulo3">Candidato : 1</h2>
-<br><br><br>
+                    <br><br><br>
                     <label for="Nombre">Nombre : </label>
                     <input type="text" id="Nombre" name="Nombre">
-<br><br><br>    
+                    <br><br><br>
                     <label for="Experiencia">Experiencia laboral: </label>
                     <input type="text" id="Experiencia" name="Experiencia">
-<br><br><br>
+                    <br><br><br>
                     <label for="Educación">Educación : </label>
                     <input type="text" id="Educación" name="Educación">
-<br><br><br>
+                    <br><br><br>
                     <label for="Edad">Edad : </label>
                     <input type="text" id="Edad" name="Edad">
-<br><br><br>
+                    <br><br><br>
                     <label for="habilidades">Habilidades : </label>
                     <input type="text" id="Habilidades" name="Habilidades">
-<br><br><br>
+                    <br><br><br>
                     <label for="Ubicación">Ubicación : </label>
                     <input type="text" id="Ubicación" name="Ubicación">
-<br><br><br>
+                    <br><br><br>
                     <label for="Nombre">Correo : </label>
-                    <input type="text" id="Correo Electronico" name="Correo Electronico">  
-<br><br><br>
+                    <input type="text" id="Correo Electronico" name="Correo Electronico">
+                    <br><br><br>
                     <label for="Telefono">Telefono : </label>
                     <input type="text" id="Telefono" name="Telefono">
-<br><br><br>
+                    <br><br><br>
                     <label for="Resumen">Resumen : </label>
-<br>
-                    <textarea name="Resumen" id="" cols="30" rows="10"></textarea>
-<br><br><br>
-                    <button type="submit">Guardar</button>
-<br><br><br>
-                </form>
-<br><br>
-                    <form>
-                                        
-                        <h2 class="titulo3">Candidato : 2</h2>
-                    <br><br><br>
-                        <label for="Nombre">Nombre : </label>
-                        <input type="text" id="Nombre" name="Nombre">
-                    <br><br><br>    
-                        <label for="Experiencia">Experiencia laboral: </label>
-                        <input type="text" id="Experiencia" name="Experiencia">
-                    <br><br><br>
-                        <label for="Educación">Educación : </label>
-                        <input type="text" id="Educación" name="Educación">
-                    <br><br><br>
-                        <label for="Edad">Edad : </label>
-                        <input type="text" id="Edad" name="Edad">
-                    <br><br><br>
-                        <label for="habilidades">Habilidades : </label>
-                        <input type="text" id="Habilidades" name="Habilidades">
-                    <br><br><br>
-                        <label for="Ubicación">Ubicación : </label>
-                        <input type="text" id="Ubicación" name="Ubicación">
-                    <br><br><br>
-                        <label for="Nombre">Correo : </label>
-                        <input type="text" id="Correo Electronico" name="Correo Electronico">  
-                    <br><br><br>
-                        <label for="Telefono">Telefono : </label>
-                        <input type="text" id="Telefono" name="Telefono">
-                    <br><br><br>
-                        <label for="Resumen">Resumen : </label>
                     <br>
-                        <textarea name="Resumen" id="" cols="30" rows="10"></textarea>
+                    <textarea name="Resumen" id="" cols="30" rows="10"></textarea>
                     <br><br><br>
-                        <button type="submit">Guardar</button>
-<br><br><br><br>
-                        <a href="/HTML/index.html" class="volver-atras"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
+                    <button type="submit">Guardar</button>
+                    <br><br><br>
+                </form>
+                <br><br>
+                <form>
+
+                    <h2 class="titulo3">Candidato : 2</h2>
+                    <br><br><br>
+                    <label for="Nombre">Nombre : </label>
+                    <input type="text" id="Nombre" name="Nombre">
+                    <br><br><br>
+                    <label for="Experiencia">Experiencia laboral: </label>
+                    <input type="text" id="Experiencia" name="Experiencia">
+                    <br><br><br>
+                    <label for="Educación">Educación : </label>
+                    <input type="text" id="Educación" name="Educación">
+                    <br><br><br>
+                    <label for="Edad">Edad : </label>
+                    <input type="text" id="Edad" name="Edad">
+                    <br><br><br>
+                    <label for="habilidades">Habilidades : </label>
+                    <input type="text" id="Habilidades" name="Habilidades">
+                    <br><br><br>
+                    <label for="Ubicación">Ubicación : </label>
+                    <input type="text" id="Ubicación" name="Ubicación">
+                    <br><br><br>
+                    <label for="Nombre">Correo : </label>
+                    <input type="text" id="Correo Electronico" name="Correo Electronico">
+                    <br><br><br>
+                    <label for="Telefono">Telefono : </label>
+                    <input type="text" id="Telefono" name="Telefono">
+                    <br><br><br>
+                    <label for="Resumen">Resumen : </label>
+                    <br>
+                    <textarea name="Resumen" id="" cols="30" rows="10"></textarea>
+                    <br><br><br>
+                    <button type="submit">Guardar</button>
+                    <br><br><br><br>
+                    <a href="/HTML/index.html" class="volver-atras"><img src="/Img/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
 
                     <br><br><br>
-                    </form>
+                </form>
                 <br>
             </section>
             <footer id="contenedor-footer">
-                    
+
                 <section id="contenedor-footer">
 
                     <section id="union">
 
                         <section id="contenedor-img">
-                            <img id="logo-png"  src="/Img/Logo-png.png"/>
+                            <img id="logo-png" src="/Img/Logo-png.png" />
                         </section>
 
                         <section id="info-footer">
@@ -319,46 +330,46 @@
                                 <span>3214860900</span>
 
                                 <article id="apps">
-                                    <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                    <a href="https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-facebook"></i>
                                     </a>
-                                    <a href= "https://web.whatsapp.com/" target="-blank">
+                                    <a href="https://web.whatsapp.com/" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-whatsapp"></i>
                                     </a>
-                                    <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                    <a href="https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
-                                    <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
                                         <br>
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
-                                    </article>
+                                </article>
                             </article>
 
                             <article id="william">
                                 <h3>William Lozano</h3>
                                 <span>3153504473</span>
                                 <article id="apps">
-                                    <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                    <a href="https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-facebook"></i>
                                     </a>
-                                    <a href= "https://web.whatsapp.com/" target="-blank">
+                                    <a href="https://web.whatsapp.com/" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-whatsapp"></i>
                                     </a>
-                                    <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                    <a href="https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
-                                    <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
                                         <br>
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
-                                    </article>
+                                </article>
                             </article>
 
                             <article id="peter">
@@ -366,53 +377,54 @@
                                 <span>3044479143</span>
 
                                 <article id="apps">
-                                    <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                    <a href="https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-facebook"></i>
                                     </a>
-                                    <a href= "https://web.whatsapp.com/" target="-blank">
+                                    <a href="https://web.whatsapp.com/" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-whatsapp"></i>
                                     </a>
-                                    <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                    <a href="https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
-                                    <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
                                         <br>
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
-                                    </article>
+                                </article>
                             </article>
 
                             <article id="capera">
                                 <h3>Diego Capera</h3>
                                 <span>3005301839</span>
-                                
+
                                 <article id="apps">
-                                    <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                    <a href="https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-facebook"></i>
                                     </a>
-                                    <a href= "https://web.whatsapp.com/" target="-blank">
+                                    <a href="https://web.whatsapp.com/" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-whatsapp"></i>
                                     </a>
-                                    <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                    <a href="https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
                                         <br>
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
-                                    <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
                                         <br>
                                         <i class="fa-solid fa-envelope"></i>
                                     </a>
 
-                                    
-                                    </article>
+
                                 </article>
-                            </section>
+                            </article>
                         </section>
                     </section>
-                </footer> 
-        </body>
+                </section>
+            </footer>
+</body>
+
 </html>
