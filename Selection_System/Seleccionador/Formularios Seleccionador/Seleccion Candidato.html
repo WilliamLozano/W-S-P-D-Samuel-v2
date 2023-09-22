@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Perfles de Candidatos formulario</title>
+    <script src="https://kit.fontawesome.com/10d9a6ff24.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+        
+        main {
+            background-color: black;
+            color: white;
+        }
+        
+        #areas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Tres columnas en lugar de dos */
+            grid-template-rows: 10vh 10vh auto;
+            /* Cambiado el tamaño de la última fila para el pie de página */
+            grid-template-areas: "header header header"/* Tres columnas en el encabezado */
+            "contenedor-titulo contenedor-titulo contenedor-titulo"/* Tres columnas para el título */
+            "candidatos-contenedor candidatos-contenedor candidatos-contenedor" "contenedor-formulario contenedor-formulario contenedor-formulario"/* Tres columnas para el formulario */
+            "contenedor-footer contenedor-footer contenedor-footer";
+            /* Tres columnas para el footer */
+        }
+        
+        #header {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 25px;
+            grid-area: header;
+            border-bottom: 3px solid white;
+            font-size: 23pt;
+        }
+        
+        #contenedor-logo {
+            font-weight: 1000;
+        }
+        
+        #s-amarilla {
+            color: #FFD966;
+        }
+        
+        #selection-system {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-weight: 1000;
+        }
+        
+        #system {
+            color: #FFD966;
+        }
+        
+        #titulo1 {
+            text-align: center;
+            margin-left: 40px;
+            font-size: x-large;
+        }
+        
+        #contenedor-titulo {
+            font-size: xx-large;
+        }
+        
+        #contenedor-formulario {
+            grid-area: contenedor-formulario;
+        }
+        /* Estilos para el formulario */
+        
+        form {
+            background-color: #070707;
+            border-radius: 3px;
+            border: 1px solid #ffd966a5;
+            padding: 25px;
+            border-radius: 5px;
+        }
+        /* Estilos para las etiquetas de los campos */
+        
+        label {
+            display: block;
+            color: #FFD966;
+            margin-bottom: 15px;
+        }
+        /* Estilos para los campos de entrada de texto */
+        
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #FFD966;
+            border-radius: 3px;
+            background-color: #444;
+            color: white;
+        }
+        /* Estilos para el botón de envío */
+        
+        button[type="submit"] {
+            background-color: #FFD966;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 47%;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #FFC800;
+        }
+        
+        .volver-atras {
+            margin-left: 50%;
+        }
+        /* Estilos para el pie de página */
+        
+        footer {
+            grid-area: contenedor-footer;
+            background-color: #FFD966;
+            box-shadow: 0 0 10px #0c0c0c;
+            background-color: #ffd966d3;
+            ;
+            /* Color de fondo del footer */
+            color: #100f0f;
+            /* Color del texto en el footer */
+            padding: 20px 0;
+            /* Espaciado interno superior e inferior */
+            text-align: center;
+            /* Centrar el texto en el footer */
+        }
+        /* Estilos para los nombres de contacto */
+        
+        h3 {
+            font-size: 18px;
+            /* Tamaño de fuente de los nombres */
+            margin: 10px 0;
+            /* Espaciado superior e inferior */
+        }
+        
+        footer:hover {
+            box-shadow: 0 0 40px #FFD966;
+            transition: 0.4s;
+        }
+        
+        #union {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #0c0c0c;
+        }
+        
+        #contenedor-img {
+            width: 7%;
+            margin-left: 10px;
+        }
+        
+        #logo-png {
+            display: flex;
+            width: 160px;
+            height: 117px;
+        }
+        
+        #info-footer {
+            display: flex;
+            color: black;
+            width: 90%;
+            justify-content: space-evenly;
+        }
+        
+        #sebas,
+        #william,
+        #peter,
+        #capera {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        #apps {
+            display: flex;
+            gap: 25px;
+        }
+        
+        #apps i {
+            color: black
+        }
+        
+        #apps i:hover {
+            color: black;
+            font-size: 23px;
+            transition: 0.3s;
+        }
+        
+        button {
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #ffcc00;
+            ;
+            /* Cambia el color de fondo al pasar el cursor */
+        }
+        /* Estilos para el botón de envío del menú */
+        
+        .menu-button {
+            /* ... otros estilos ... */
+            position: relative;
+            /* Establece posición relativa en el botón de menú */
+            background-color: #FFD966;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 5px;
+            transition: background-color 0.3s ease;
+        }
+        /* Estilos para el menú desplegable */
+        
+        .menu-dropdown {
+            position: absolute;
+            /* Establece posición absoluta para el menú */
+            top: 30%;
+            /* Coloca el menú debajo del botón de menú */
+            left: 21%;
+            /* Alinea el menú a la izquierda del botón de menú */
+            background-color: #131212cb;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+            display: none;
+        }
+        /* Estilos para las opciones del menú */
+        
+        .menu-item {
+            padding: 10px;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        /* Estilos para las opciones del menú al pasar el mouse */
+        
+        .menu-item:hover {
+            background-color: #FFD966;
+        }
+        
+        .candidato-1,
+        .candidato-2 {
+            display: inline-block;
+            text-align: center;
+            align-items: center;
+            font-size: x-large;
+            width: 48%;
+            /* Ajusta el ancho para dejar espacio entre los candidatos */
+            margin-left: 27%;
+            color: #ffc8008b;
+        }
+        
+        #candidatos-contenedor {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .img-1,
+        .img-2 {
+            transition: transform 0.5s linear;
+        }
+        
+        .img-1:hover,
+        .img-2:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .candidato-1,
+        .candidato-2 {
+            transition: transform 0.5s linear;
+        }
+        
+        .candidato-1:hover,
+        .candidato-2:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-png {
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-png:hover {
+            transform: scale(1.2);
+            /* Aumenta el tamaño del logotipo al pasar el cursor */
+        }
+        
+        #filtro-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .filtro-button-left {
+            flex: 1;
+            /* Toma todo el espacio disponible a la izquierda */
+        }
+        
+        .filtro-button-right {
+            flex: 1;
+            /* Toma todo el espacio disponible a la derecha */
+            text-align: right;
+            /* Alinea el botón de filtros avanzados a la derecha */
+        }
+        
+        .menu-button.avanzados {
+            background-color: #FFD966;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        /* Estilos para el botón de envío del menú */
+        
+        .menu-button-1 {
+            position: relative;
+            /* Establece posición relativa en el botón de menú */
+            background-color: #FFD966;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 5px;
+            transition: background-color 0.3s ease;
+        }
+        /* Estilos para el menú desplegable */
+        
+        .menu-dropdown-1 {
+            position: absolute;
+            /* Establece posición absoluta para el menú */
+            top: 30%;
+            /* Coloca el menú debajo del botón de menú */
+            left: 86%;
+            /* Alinea el menú a la izquierda del botón de menú */
+            background-color: #131212cb;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="index">
+        <section id="areas">
+            <header id="header">
+                <section id="contenedor-logo">
+                    <span>S<span id="s-amarilla">S</span></span>
+                </section>
+                <section id="selection-system">
+                    <span>Selection<span id="system"> System</span></span>
+                </section>
+                <br>
+                <br>
+            </header>
+            <br>
+            <section id="contenedor-titulo">
+                <br>
+                <h1 id="titulo1"><span id="s-amarilla">Seleccion de</span> <span>Candidatos</span></h1>
+                <br>
+            </section>
+
+            <section id="contenedor-formulario">
+                <form>
+
+                    <article id="filtro-buttons">
+                        <article class="filtro-button-left">
+                            <h2>Ordenar Por : <button class="menu-button" onclick="toggleMenu()">Nombre <img src="/Seleccionador/Img Seleccionador/down-arrow-svgrepo-com.svg" alt="pa bajo" height="15px" width="15px"></button></h2>
+                        </article>
+                        <article class="filtro-button-right">
+                            <h2>Filtros Por : <button class="menu-button avanzados" onclick="toggleMenu1()">Candidato <img src="/Seleccionador/Img Seleccionador/down-arrow-svgrepo-com.svg" alt="pa bajo" height="15px" width="15px"></button></h2>
+                        </article>
+                    </article>
+
+                    <br><br>
+
+                    <section class="candidatos-contenedor">
+                        <article class="candidato-1">
+
+                            <img src="/Seleccionador/Img Seleccionador/Logo Proyecto.png" alt="Imagen candidato" width="150px" height="150px" class="img-2">
+                            <br><br>
+                            <h5>Candidato : 1
+                                <br><br> Nombre del candidato : William Andrés Lozano Salazar
+                                <br><br> Experiencia Laboral : 5 Años
+                                <br><br> Educación: Instutucion Educativa Compartir
+                                <br><br> Edad: 18 Años
+                                <br><br> Habilidades : Html, Css y Javascript
+                                <br><br><br>
+
+                            </h5>
+                        </article>
+                        <br><br><br><br><br><br><br>
+                        <article class="candidato-2">
+
+                            <img src="/Seleccionador/Img Seleccionador/Logo Proyecto.png" alt="Imagen candidato" width="150px" height="150px" class="img-2">
+                            <br><br>
+                            <h5>Candidato : 2
+                                <br><br> Nombre del candidato : Juan Carlos Pedranza Koto
+                                <br><br> Experiencia Laboral : 1 Años
+                                <br><br> Educación: Instutucion Educativa Chevalier
+                                <br><br> Edad: 28 Años
+                                <br><br> Habilidades : Html, Css y Python
+
+                            </h5>
+                            <br><br>
+
+                        </article>
+                        <article>
+                            <button type="submit">Guardar Perfiles</button>
+                            <br><br><br>
+                            <a href="/Seleccionador/HTML Seleccionador/index.html" class="volver-atras"><img src="/Seleccionador/Img Seleccionador/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
+                        </article>
+                    </section>
+
+
+                    <section id="menuDropdown" class="menu-dropdown">
+
+                        <a class="menu-item" href="#"><button class="menu-button">Nombre</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button">Educacion</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button">Edad</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button">Apellido</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button">Experiencia</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button">Telefono</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button">Id Candidato</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button">Educación</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button">Habilidades</button></a>
+
+                        <script>
+                            function toggleMenu() {
+                                var menu = document.getElementById("menuDropdown");
+                                if (menu.style.display === "none" || menu.style.display === "") {
+                                    menu.style.display = "block";
+                                } else {
+                                    menu.style.display = "none";
+                                }
+                            }
+                        </script>
+                    </section>
+
+                    <section id="menuDropdown-1" class="menu-dropdown-1">
+
+                        <a class="menu-item" href="#"><button class="menu-button-1">Ubicación</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button-1">Correo</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button-1">Rol</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button-1">Resumen</button></a>
+                        <a class="menu-item" href="#"><button class="menu-button-1">Tipo de Empresa</button></a>
+
+                        <script>
+                            function toggleMenu1() {
+                                var menu = document.getElementById("menuDropdown-1");
+                                if (menu.style.display === "none" || menu.style.display === "") {
+                                    menu.style.display = "block";
+                                } else {
+                                    menu.style.display = "none";
+                                }
+                            }
+                        </script>
+                    </section>
+                </form>
+                <br>
+            </section>
+            <footer id="contenedor-footer">
+
+                <section id="contenedor-footer">
+
+                    <section id="union">
+
+                        <section id="contenedor-img">
+                            <img id="logo-png" src="/Seleccionador/Img Seleccionador/Logo Proyecto.png" />
+                        </section>
+
+                        <section id="info-footer">
+
+                            <article id="sebas">
+
+                                <h3 id="titulo-sebas">Sebastian Triana</h3>
+                                <span>3214860900</span>
+
+                                <article id="apps">
+                                    <a href="https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href="https://web.whatsapp.com/" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                        <br>
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                </article>
+                            </article>
+
+                            <article id="william">
+                                <h3>William Lozano</h3>
+                                <span>3153504473</span>
+                                <article id="apps">
+                                    <a href="https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href="https://web.whatsapp.com/" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                        <br>
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                </article>
+                            </article>
+
+                            <article id="peter">
+                                <h3>Peter Bustamante</h3>
+                                <span>3044479143</span>
+
+                                <article id="apps">
+                                    <a href="https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href="https://web.whatsapp.com/" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                        <br>
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                </article>
+                            </article>
+
+                            <article id="capera">
+                                <h3>Diego Capera</h3>
+                                <span>3005301839</span>
+
+                                <article id="apps">
+                                    <a href="https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href="https://web.whatsapp.com/" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                        <br>
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                        <br>
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+
+
+                                </article>
+                            </article>
+                        </section>
+                    </section>
+                </section>
+            </footer>
+</body>
+
+</html>

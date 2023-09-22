@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/10d9a6ff24.js" crossorigin="anonymous"></script>
+    <title>Configuracion Cuenta formulario</title>
+    <style>
+      * {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+
+        main {
+            background-color: black;
+            color: white;
+        }
+
+        #areas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Tres columnas en lugar de dos */
+            grid-template-rows: 10vh 25vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
+            grid-template-areas:
+                "header header header" /* Tres columnas en el encabezado */
+                "contenedor-titulo contenedor-titulo contenedor-titulo" /* Tres columnas para el título */
+                "contenedor-formulario contenedor-formulario contenedor-formulario" /* Tres columnas para el formulario */
+                "contenedor-footer contenedor-footer contenedor-footer"; /* Tres columnas para el footer */
+                
+        }
+
+        #header {
+        color: white;
+        display:flex;
+        justify-content: space-between;
+        padding: 25px;
+        grid-area: header;
+        border-bottom: 3px solid white;
+        font-size: 23pt;
+        }
+
+        #contenedor-logo {
+            font-weight: 1000;
+        }
+
+        #s-amarilla {
+            color: #FFD966;
+        }
+
+        #selection-system {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: 1000;
+        }      
+
+        #system {
+            color: #FFD966;
+        }
+
+        #contenedor-titulo{
+            grid-area: contenedor-titulo;
+            align-items: center;
+            text-align: center;
+            margin-left: 50px;
+            font-size: 22px;
+        }
+
+        #contenedor-formulario{
+            grid-area: contenedor-formulario;
+        }
+
+        /* Estilos para el formulario */
+        form {
+            background-color: #070707;
+            border-radius: 3px;
+            border: 1px solid  #ffd966a5; 
+            padding: 25px;
+            border-radius: 5px;
+        }
+
+        /* Estilos para las etiquetas de los campos */
+        label {
+            display: block;
+            color: #FFD966;
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para los campos de entrada de texto */
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid  #FFD966;
+            border-radius: 3px;
+            background-color: #444;
+            color: white;
+        }
+
+        /* Estilos para los campos de entrada de texto */
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid  #FFD966;
+            border-radius: 3px;
+            background-color: #444;
+            color: white;
+        }
+
+        /* Estilos para el botón de envío */
+        button[type="submit"] {
+            background-color: #FFD966;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 49%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #FFC800;
+        }
+
+        .volver-atras{
+            margin-left: 50%;
+        }
+
+
+        /* Estilos para el pie de página */
+        footer {
+        grid-area: contenedor-footer;
+        background-color: #FFD966;
+        box-shadow: 0 0 10px #0c0c0c;
+        background-color:  #ffd966d3; ; /* Color de fondo del footer */
+        color: #100f0f; /* Color del texto en el footer */
+        padding: 20px 0; /* Espaciado interno superior e inferior */
+        text-align: center; /* Centrar el texto en el footer */
+        }
+
+        
+
+        /* Estilos para los nombres de contacto */
+        h3 {
+            font-size: 18px; /* Tamaño de fuente de los nombres */
+            margin: 10px 0; /* Espaciado superior e inferior */
+            
+        }
+
+
+        footer:hover {
+            box-shadow: 0 0 40px #FFD966;
+            transition: 0.4s;
+        }
+
+        #union {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #0c0c0c;
+        }
+
+        #contenedor-img {
+            width: 7%;
+            margin-left: 10px;
+        }
+
+        #logo-png {
+            display: flex;
+            width: 160px;
+            height: 117px;
+        }
+
+        #info-footer {
+            display: flex;
+            color: black;
+            width: 90%;
+            justify-content: space-evenly;
+        }
+
+        #sebas,#william,#peter,#capera {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        #apps {
+            display: flex;
+            gap: 25px;
+        }
+
+        #apps i{
+            color:black
+        }
+
+        #apps i:hover{
+            color:black;
+            font-size: 23px;
+            transition: 0.3s;
+        }
+
+        button {
+            transition: background-color 0.3s ease;
+        }
+        
+
+        button:hover {
+            background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
+        }       
+
+        
+
+
+    </style>
+</head>
+    <main id="index">           
+        <section id="areas">
+            <header id="header">
+                <section id="contenedor-logo">
+                    <span>S<span id="s-amarilla">S</span></span>
+                </section>
+                <section id="selection-system">
+                <span>Selection<span id="system"> System</span></span> 
+                </section>
+<br>
+<br>
+            </header>
+<br>    
+            <section id="contenedor-titulo">
+                <br>
+                <h1><span id="s-amarilla">Configuracion</span><b>  Cuenta</b></h1>
+                <br>
+            </section>
+<br>        
+            <section id="contenedor-formulario">
+                <form>
+                    <label for="Nombre">Nombre : </label>
+                    <input type="text" id="Nombre" name="Nombre">
+<br><br><br>
+                    <label for="Correo Electronico">Correo Electronico : </label>
+                    <input type="text" id="Correo Electronico" name="Correo Electronico">
+<br><br><br>
+                    <label for="Contraseña">Contraseña : </label>
+                    <input type="password" id="Contraseña" name="Contraseña">
+<br><br><br>
+                    <button type="submit">Enviar</button>
+<br><br><br>
+                    <a href="/Seleccionador/HTML Seleccionador/index.html" class="volver-atras"><img src="/Seleccionador/Img Seleccionador/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
+</form>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+            </section>
+            
+            <footer id="contenedor-footer">
+                <section>
+                    <section id="contenedor-footer">
+
+                        <section id="union">
+    
+                            <section id="contenedor-img">
+                                <img id="logo-png" src="/Seleccionador/Img Seleccionador/Logo Proyecto.png" />
+                            </section>
+    
+                            <section id="info-footer">
+    
+                                <article id="sebas">
+    
+                                    <h3 id="titulo-sebas">Sebastian Triana</h3>
+                                    <span>3214860900</span>
+    
+                                    <article id="apps">
+                                        <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-facebook"></i>
+                                        </a>
+                                        <a href= "https://web.whatsapp.com/" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                        <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                            <br>
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </a>
+                                        </article>
+                                </article>
+    
+                                <article id="william">
+                                    <h3>William Lozano</h3>
+                                    <span>3153504473</span>
+    
+                                    <article id="apps">
+                                        <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-facebook"></i>
+                                        </a>
+                                        <a href= "https://web.whatsapp.com/" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                        <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                            <br>
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </a>
+                                        </article>
+                                </article>
+    
+                                <article id="peter">
+                                    <h3>Peter Bustamante</h3>
+                                    <span>3044479143</span>
+    
+                                    <article id="apps">
+                                        <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-facebook"></i>
+                                        </a>
+                                        <a href= "https://web.whatsapp.com/" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                        <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                            <br>
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </a>
+                                        </article>
+                                </article>
+    
+                                <article id="capera">
+                                    <h3>Diego Capera</h3>
+                                    <span>3005301839</span>
+    
+                                    <article id="apps">
+                                        <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-facebook"></i>
+                                        </a>
+                                        <a href= "https://web.whatsapp.com/" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                        <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                            <br>
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                        <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                            <br>
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </a>
+                                        </article>
+                                    </article>
+                                </section>
+                            </section>
+                        </section>
+                </section>
+            </footer>
+        </main>
+    </body>
+</html>

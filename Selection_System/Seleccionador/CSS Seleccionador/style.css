@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400&family=Montserrat&family=Poppins:wght@300&family=Tilt+Prism&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+
+
+/* Se desea que todo lo que contenga la etiqueta main tenga un color de fondo negro y el color de letra blanco */
+
+main {
+    background-color: black;
+    color: white
+}
+
+
+/* Se inicializa 2 columnas por 3 filas que se dividirán en el header, contenido y footer. Sus proporciones en columna se dan con grid-column y las proporciones en fila con grid-row */
+
+#areas {
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-row: 5vh 45vh 5vh;
+    grid-template-areas: "header    header" "contenedor-titulo contenedor-titulo" "botones-1 botones-1" "contenedor-formularios contenedor-formularios";
+}
+
+
+/*------------------------------------------------- ETIQUETA HEADER ----------------------------------------------------------------------------*/
+
+
+/* Todo lo que contenga la etiqueta header tendrá un color de letra blanco, se desea que cada contenedor se extienda de borde a borde de la página, donde tendrá un espacio dentro del contenedor de 25px con la propiedad padding. A la etiqueta header se le tendrán que pasar las proporciones que tendrá en la página, por eso se le asigna la propiedad grid-area, que ocupará todo el header */
+
+#header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    grid-area: header;
+    border-bottom: 3px solid white;
+}
+
+
+/* Logo corresponde al contenedor en el que están las dos "S" que representan el logo de la marca, en este caso se le dará un peso "negrilla" de 1000 */
+
+#contenedor-logo {
+    font-weight: 1000;
+    font-size: 35pt;
+}
+
+
+/* Se desea cambiar el color de la segunda "S" del logo y darle un espacio de 3px entre ellas con un margin-left */
+
+#s-amarilla {
+    color: #FFD966;
+    margin-left: 2px;
+}
+
+
+/* Este contenedor hace referencia al nombre del proyecto, donde se le darán las propiedades de display: flex para que dicho contenedor se pueda alinear al centro de la página y alinear al centro del contenedor. Se podrá hacer ya que el contenedor está ocupando el 100% de la pantalla a lo ancho, así que todo se pondrá al centro de esta, y con la propiedad font-weight toma un peso de 1000 */
+
+#selection-system {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 1000;
+}
+
+
+/* Al nombre "system" se le dará otro color diferente al blanco dado por defecto en la etiqueta main */
+
+#system {
+    color: #FFD966;
+}
+
+
+/*------------------------------------------------- ETIQUETA SECTION "DEBAJO DEL HEADER" ----------------------------------------------------------------------------*/
+
+.titulo1 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    font-size: x-large;
+    color: #ffcc00;
+}
+
+.titulo2 {
+    justify-content: center;
+    padding-left: 26%;
+    color: #ffcc00c1;
+}
+
+#botones-1 {
+    display: flex;
+    grid-column: 1fr 1fr;
+    text-align: start;
+    padding-inline-start: 50px;
+    justify-content: center;
+    padding-left: 15px;
+    gap: 25px;
+    grid-area: botones-1;
+    height: 25px;
+}
+
+
+/* Estilos para los botones */
+
+button {
+    background-color: #ffd966d5;
+    /* Color de fondo */
+    color: #100f0f;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    font-weight: bold;
+    /* Negrita */
+    border-radius: 5px;
+    /* Borde redondeado */
+    cursor: pointer;
+    /* Cambiar el cursor al pasar el mouse */
+}
+
+
+/* Estilos para las letras */
+
+.img1 h5,
+.img2 h5,
+.img3 h5,
+.img4 h5,
+.img5 h5,
+.img6 h5,
+.img7 h5,
+.img8 h5,
+.img9 h5,
+.img10 h5,
+.img11 h5,
+.img12 h5 {
+    font-family: Arial, sans-serif;
+    /* Fuente del texto */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    color: #868383;
+    /* Color del texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    /* Sombra del texto */
+    letter-spacing: 1px;
+    /* Espaciado entre letras */
+    margin-top: 10px;
+    /* Espacio superior */
+}
+
+
+/* Utilizamos CSS Grid para organizar los contenedores en 4 columnas */
+
+#contenedor-formularios-1,
+#contenedor-formularios-2,
+#contenedor-formularios-3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    /* Espacio entre los contenedores */
+    justify-content: center;
+}
+
+.img1,
+.img2,
+.img3,
+.img4,
+.img5,
+.img6,
+.img7,
+.img8,
+.img9,
+.img10,
+.img11,
+.img12 {
+    text-align: center;
+    /* Centrar el contenido dentro de los artículos */
+    margin: 20px;
+    /* Espacio entre los artículos */
+}
+
+
+/* Centramos #contenedor-formularios-3 de forma horizontal */
+
+#contenedor-formularios-3 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Estilos para el pie de página */
+
+footer {
+    position: static;
+    /* Fija el pie de página en la parte inferior */
+    bottom: 0;
+    /* Alinea el pie de página en la parte inferior de la ventana */
+    left: 0;
+    /* Alinea el pie de página a la izquierda */
+    right: 0;
+    /* Alinea el pie de página a la derecha */
+    background-color: #FFD966;
+    box-shadow: 0 0 5px #0c0c0c;
+    background-color: #ffd966d3;
+    /* Color de fondo del footer */
+    color: #100f0f;
+    /* Color del texto en el footer */
+    padding: 10px 0;
+    /* Espaciado interno superior e inferior */
+    text-align: center;
+    /* Centrar el texto en el footer */
+    z-index: 1;
+    /* Asegura que el pie de página esté en la parte superior de otros elementos */
+}
+
+
+/* Estilos para los nombres de contacto */
+
+h3 {
+    font-size: 18px;
+    /* Tamaño de fuente de los nombres */
+    margin: 10px 0;
+    /* Espaciado superior e inferior */
+}
+
+footer:hover {
+    box-shadow: 0 0 40px #FFD966;
+    transition: 0.4s;
+}
+
+#union {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0c0c0c;
+}
+
+#contenedor-img {
+    width: 7%;
+    margin-left: 10px;
+}
+
+#logo-png {
+    display: flex;
+    width: 160px;
+    height: 117px;
+}
+
+#info-footer {
+    display: flex;
+    color: black;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+#sebas,
+#william,
+#peter,
+#capera {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#apps {
+    display: flex;
+    gap: 15px;
+}
+
+#apps i {
+    color: black
+}
+
+#apps i:hover {
+    color: black;
+    font-size: 23px;
+    transition: 0.3s;
+}
+
+button {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffcc00;
+    ;
+    /* Cambia el color de fondo al pasar el cursor */
+}
+
+
+/* Estilos para los íconos de redes sociales */
+
+.fa-brands {
+    font-size: 24px;
+    /* Tamaño de fuente de los íconos de redes sociales */
+    margin: 0 5px;
+    /* Espaciado horizontal entre los íconos */
+}
+
+.fa-solid {
+    font-size: 24px;
+    /* Tamaño de fuente de los íconos de correo electrónico */
+}
+
+
+/* Animaciones  */
+
+button {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffcc00;
+    ;
+    /* Cambia el color de fondo al pasar el cursor */
+}
+
+.img1,
+.img2,
+.img3,
+.img4,
+.img5,
+.img6,
+.img7,
+.img8,
+.img9,
+.img10,
+.img11,
+.img12 {
+    transition: transform 0.5s linear;
+}
+
+.img1:hover,
+.img2:hover,
+.img3:hover,
+.img4:hover,
+.img5:hover,
+.img6:hover,
+.img7:hover,
+.img8:hover,
+.img9:hover,
+.img10:hover,
+.img11:hover,
+.img12:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.logo-png {
+    transition: transform 0.3s ease;
+}
+
+.logo-png:hover {
+    transform: scale(1.2);
+    /* Aumenta el tamaño del logotipo al pasar el cursor */
+}

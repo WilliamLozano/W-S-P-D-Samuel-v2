@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda formulario</title>
+    <script src="https://kit.fontawesome.com/10d9a6ff24.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+      * {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+
+        main {
+            background-color: black;
+            color: white;
+        }
+
+        #areas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Tres columnas en lugar de dos */
+            grid-template-rows: 10vh 25vh auto; /* Cambiado el tamaño de la última fila para el pie de página */
+            grid-template-areas:
+                "header header header" /* Tres columnas en el encabezado */
+                "contenedor-titulo contenedor-titulo contenedor-titulo" /* Tres columnas para el título */
+                "contenedor-preguntas contenedor-preguntas contenedor-preguntas" /* Tres columnas para el formulario */
+                "contenedor-footer contenedor-footer contenedor-footer"; /* Tres columnas para el footer */
+                
+        }
+
+        #header {
+        color: white;
+        display:flex;
+        justify-content: space-between;
+        padding: 25px;
+        grid-area: header;
+        border-bottom: 3px solid white;
+        font-size: 23pt;
+        }
+
+        #contenedor-logo {
+            font-weight: 1000;
+        }
+
+        #s-amarilla {
+            color: #FFD966;
+        }
+
+        #selection-system {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-weight: 1000;
+        }      
+
+        #system {
+            color: #FFD966;
+        }
+
+        #titulo1 {
+            color: #f2f2f2;
+            text-align:center;
+            font-size: 24px;
+            margin-bottom: 10px;
+            gap: 10px;
+            font-weight: 1000;
+            padding-left: 45px;
+        }
+
+        #contenedor-preguntas{
+            grid-area: contenedor-preguntas;
+            text-align: center;
+            align-items: center;
+            font-weight: 1000;
+        }
+
+        .pregunta {
+            background-color: #151515;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid  #FFD966;;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out; /* Transición suave para la animación */
+
+        }
+
+        /* Estilos para los títulos de las preguntas */
+        .pregunta h3 {
+            color: #FFD966;
+            font-size: 18px;
+        }
+
+        /* Estilos para el texto de las preguntas */
+        .pregunta p {
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Animación de expansión al pasar el mouse */
+        .pregunta:hover {
+            transform: scale(1.05); /* Escala el elemento al 105% del tamaño original */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Cambia la sombra al pasar el mouse */
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+        grid-area: contenedor-footer;
+        background-color: #FFD966;
+        box-shadow: 0 0 10px #0c0c0c;
+        background-color:  #ffd966d3; ; /* Color de fondo del footer */
+        color: #100f0f; /* Color del texto en el footer */
+        padding: 20px 0; /* Espaciado interno superior e inferior */
+        text-align: center; /* Centrar el texto en el footer */
+        }
+
+        
+
+        /* Estilos para los nombres de contacto */
+        h3 {
+            font-size: 18px; /* Tamaño de fuente de los nombres */
+            margin: 10px 0; /* Espaciado superior e inferior */
+            
+        }
+
+
+        footer:hover {
+            box-shadow: 0 0 40px #FFD966;
+            transition: 0.4s;
+        }
+
+        #union {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #0c0c0c;
+        }
+
+        #contenedor-img {
+            width: 7%;
+            margin-left: 10px;
+        }
+
+        #logo-png {
+            display: flex;
+            width: 160px;
+            height: 117px;
+        }
+
+        #info-footer {
+            display: flex;
+            color: black;
+            width: 90%;
+            justify-content: space-evenly;
+        }
+
+        #sebas,#william,#peter,#capera {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        #apps {
+            display: flex;
+            gap: 25px;
+        }
+
+        #apps i{
+            color:black
+        }
+
+        #apps i:hover{
+            color:black;
+            font-size: 23px;
+            transition: 0.3s;
+        }
+
+        button {
+            transition: background-color 0.3s ease;
+        }
+        
+
+        button:hover {
+            background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
+        }        
+
+        /* Estilos para el botón de envío */
+        button[type="submit"] {
+            background-color: #FFD966;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+
+        }
+        
+
+        button:hover {
+            background-color: #ffcc00;; /* Cambia el color de fondo al pasar el cursor */
+        }       
+
+
+    </style>
+</head>
+<body>
+    <main id="index">
+        <section id="areas">
+            <header id="header">
+                <section id="contenedor-logo">
+                    <span>S<span id="s-amarilla">S</span></span>
+                </section>
+                <section id="selection-system">
+                <span>Selection<span id="system"> System</span></span> 
+                </section>
+                <br>
+                <br>
+            </header>
+<br>
+            <section id="contenedor-titulo"> 
+                <br>
+                <h1 id="titulo1"><span id="s-amarilla">Preguntas</span> <span>Frecuentes</span></h1>
+                <br>
+            </section>
+<br><br><br>
+            <section id="contenedor-preguntas">
+                <form>
+                    <section id="preguntas-frecuentes">
+                        <article class="pregunta">
+                            <h3>Pregunta 1: ¿Cómo puedo editar mi perfil?</h3>
+                            <br>
+                            <p>Para editar tu perfil, ve a la página de "Configuración de la Cuenta" y haz clic en la opción de "Editar Perfil". Aquí puedes actualizar tu nombre, correo electrónico y contraseña.</p>
+                        </article>
+<br><br><br>
+                        <article class="pregunta">
+                            <h3>Pregunta 2: ¿Cómo buscar candidatos por habilidades?</h3>
+                            <br>
+                            <p>En la página de "Buscar Candidatos", utiliza el campo de "Habilidades" para ingresar las habilidades que deseas buscar. Luego, haz clic en el botón "Buscar" para ver los resultados.</p>
+                        </article>
+<br><br><br>
+                        <article class="pregunta">
+                            <h3>Pregunta 3: ¿Cómo agregar una tarea pendiente?</h3>
+                            <br>
+                            <p>En la página de "Tareas Pendientes", completa el formulario con el nombre y la descripción de la tarea que deseas agregar. Después, haz clic en el botón "Agregar Tarea". Si tienes más preguntas, no dudes en contactarnos.</p>
+                        </article>
+<br><br><br>
+                        <button type="submit">Agregar pregunta</button>
+                    </section>
+<br><br><br>
+                <a href="/Seleccionador/HTML Seleccionador/index.html" class="volver-atras"><img src="/Seleccionador/Img Seleccionador/left-arrow-back-svgrepo-com (3).svg" alt="Back bro" height="50px" width="50px"></a>
+<br><br><br><br><br><br><br><br><br>
+                </form>
+            </section>
+            <footer>
+
+                <section id="contenedor-footer">
+
+                    <section id="union">
+
+                        <section id="contenedor-img">
+                            <img id="logo-png" src="/Seleccionador/Img Seleccionador/Logo Proyecto.png" />
+                        </section>
+
+                        <section id="info-footer">
+
+                            <article id="sebas">
+
+                                <h3 id="titulo-sebas">Sebastian Triana</h3>
+                                <span>3214860900</span>
+
+                                <article id="apps">
+                                    <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href= "https://web.whatsapp.com/" target="-blank">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                    </article>
+                            </article>
+
+                            <article id="william">
+                                <h3>William Lozano</h3>
+                                <span>3153504473</span>
+
+                                <article id="apps">
+                                    <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href= "https://web.whatsapp.com/" target="-blank">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                    </article>
+                            </article>
+
+                            <article id="peter">
+                                <h3>Peter Bustamante</h3>
+                                <span>3044479143</span>
+
+                                <article id="apps">
+                                    <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href= "https://web.whatsapp.com/" target="-blank">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                    </article>
+                            </article>
+
+                            <article id="capera">
+                                <h3>Diego Capera</h3>
+                                <span>3005301839</span>
+
+                                <article id="apps">
+                                    <a href= "https://www.facebook.com/profile.php?id=100025316872756" target="-blank">
+                                        <i class="fa-brands fa-facebook"></i>
+                                    </a>
+                                    <a href= "https://web.whatsapp.com/" target="-blank">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                    <a href= "https://www.instagram.com/sebastian___1911/?hl=es-la" target="-blank">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href= "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="-blank">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </a>
+                                    </article>
+                            </article>
+
+                        </section>
+
+                    </section>
+
+                </section>
+
+            </footer>      
+    </body>
+</html>
